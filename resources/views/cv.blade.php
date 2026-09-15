@@ -50,7 +50,7 @@
 			<div class="logo">
 				<a href="#">
 					<img class="logo-img" src="{{ Vite::asset('resources/images/cv/logo.png') }}" alt="" />
-					<span class="logo-lnk">Joé <br />Wilson</span>
+					<span class="logo-lnk">{{ $first_name }} <br />{{ $last_name }}</span>
 				</a>
 			</div>
 
@@ -122,7 +122,7 @@
 
 						<!-- title -->
 						<h1 class="h-title">
-							Joé <br />Wilson
+							{{ $first_name }} <br />{{ $last_name }}
 						</h1>
 
 						<!-- content started -->

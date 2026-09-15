@@ -9,6 +9,11 @@ class CvController extends Controller
 {
   public function view()
   {
-    return view('cv');
+    $data = [
+      'first_name' => 'Marco',
+      'middle_name' => 'Alejandro',
+      'last_name' => 'Hernández'
+    ];
+    return view('cv', $data);
   }
 }
