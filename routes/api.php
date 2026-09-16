@@ -10,5 +10,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/cv_profiles', [CvApiController::class, 'profiles']);
+Route::get('/cv_profile/{id}', [CvApiController::class, 'profile']);
 Route::get('/cv_job_titles', [CvApiController::class, 'jobTitles']);
 

@@ -18,6 +18,10 @@ class CvApiController extends Controller
       return CvProfile::all();
     }
 
+    public function profile(string $id) {
+      return CvProfile::with('jobTitles')->find($id);
+    }
+
     public function jobTitles() {
       return CvJobTitle::all();
     }
