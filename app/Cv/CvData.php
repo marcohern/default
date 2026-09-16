@@ -37,7 +37,8 @@ class CvData
         'mentour' => 'Mentor',
         'fullstack' => 'Desarrollador Full Stack',
         'web' => 'Desarrollador Web',
-        'solarch' => 'Arquitecto de Soluciones'
+        'solarch' => 'Arquitecto de Soluciones',
+        'softeng' => 'Ingeniero de Software Senior',
       ],
       'contact_me' => 'Contáctame',
       'intro' => '¡Hola! Soy un ingeniero de software con más de 20 años de experiencia en la industria.' .
@@ -61,7 +62,7 @@ class CvData
         'what_i_do' => 'Qué hago',
         'what_i_do_items' => [
           ['icon'=> 'fa-code', 'title' => 'Desarrollo de aplicacion', 'description' => 'Construyo applicaciones a la medida para satisfacer las necesidades de mis clientes.'],
-          ['icon'=> 'fa-chrome', 'title' => 'Desarrollo web', 'description' => 'Doy soporte y optimizacion para aplicaciones web existentes.'],
+          ['icon'=> 'fab fa-chrome', 'title' => 'Desarrollo web', 'description' => 'Doy soporte y optimizacion para aplicaciones web existentes.'],
           ['icon'=> 'fa-code', 'title' => 'Arquitecto de Soluciones', 'description' => 'Ayudo a mis clientes a diseñar y construir soluciones de software escalables y sostenibles.'],
           ['icon'=> 'fa-gamepad', 'title' => 'Desarrollo de Videojuegos', 'description' => 'Nadie me cree pero algun dia terminare mi propio video juego y Blizzard se sentira muy tonto por no contratarme aquella vez que le envie mi hoja de vida.'],
           ['icon'=> 'fa-video', 'title' => 'Renderizacion 3D y Video', 'description' => 'he trabajado en marketing haciendo animaciones y produccion de videos.'],
@@ -97,7 +98,8 @@ class CvData
         'mentour' => 'Mentour',
         'fullstack' => 'Full Stack Developer',
         'web' => 'Web Development',
-        'solarch' => 'Solutions Architect'
+        'solarch' => 'Solutions Architect',
+        'softeng' => 'Senior Software Engineer',
       ],
       'contact_me' => 'Contact Me',
       'intro' => 'Hello there! I am a software engineer with over 20 years of experience in the industry.' .

@@ -1115,8 +1115,8 @@
 
 					<!-- contact info -->
 					<div class="contact-info">
-						<div class="name">Joe Wilson</div>
-						<div class="subname">Consultant & Mentor</div>
+						<div class="name">{{$first_name}} {{$last_name}}</div>
+						<div class="subname">{{$job_titles['softeng']}}</div>
 						<div class="info-list">
 							<ul>
 								<li><strong>Age:</strong> 24</li>
@@ -1139,8 +1139,11 @@
 		<!-- Footer -->
 		<footer class="footer">
 			<div class="socials">
-				<a target="_blank" href="https://www.facebook.com/">
+				<a target="_blank" href="https://www.facebook.com/marcohern">
 					<i class="icon fab fa-facebook-f"></i>
+				</a>
+        <a target="_blank" href="https://www.x.com/marquiniopinio">
+					<i class="icon fab fa-twitter"></i>
 				</a>
         <a href="{{ url('/cv/en') }}">
           <span class="lang-icon">EN</span>
