@@ -45,9 +45,10 @@ class CvData
         'about_me' => 'Acerca de mí',
         'my_story' => 'Mi historia',
         'my_story_items' => [
-          'Nací en Santa Marta, Colombia el 15 de octubre de 1980. Soy el segundo hijo de un hermano mayor y dos hermanas menores. Desde temprana edad, me interesé por la tecnología y la programación, lo que me llevó a estudiar ingeniería de sistemas en la universidad.',
-          'A lo largo de mi carrera, he trabajado en diversos proyectos de desarrollo de software, adquiriendo experiencia en diferentes lenguajes de programación y tecnologías. Me considero una persona apasionada por la innovación y siempre en busca de aprender y mejorar mis habilidades.',
-          'En mi tiempo libre, disfruto leer, ver películas y jugar videojuegos. También me gusta viajar y experimentar nuevas culturas, lo que me ha permitido ampliar mi perspectiva y enriquecer mi experiencia personal y profesional.',
+          
+          'Nací en Santa Marta, Colombia el 15 de octubre de 1980. Soy el segundo hijo de un hermano mayor y dos hermanas menores. Nuestro padre nos compro una computadora Apple II para la familia, lo cual inicio mi interes por la computacion.',
+          'Pero fue al rededor de mis 2 años, conseguimos una PC Intel 386 de 30 Mhz (44 si undias el turbo) cuando realmente pude experimentar con la computacion. Incluso intentando aprender a programar yo solo en Basic con un editor de texto de consola. Fue en la Universidad que aprendi a programar formalmente, y luego de eso, no mire atras.',
+          'En mi tiempo libre, disfruto ver peliculas, jugar video juegos, y asisto al gym 3 veces por semana. Tambien me gusta experimentar con el codigo para aclarar ideas (asi es, me divierto codificando). Siempre estoy abierto para explorar y aprender nuevas tecnologias y divertirme mientras lo hago.',
         ],
         'l_age' => 'Edad',
         'l_residence' => 'Residencia',
@@ -83,9 +84,9 @@ class CvData
         'about_me' => 'About Me',
         'my_story' => 'My Story',
         'my_story_items' => [
-          'I was born in Santa Marta, Colombia on October 15, 1980. I am the second child of an older brother and two younger sisters. From a young age, I was interested in technology and programming, which led me to study systems engineering in university.',
-          'Over the course of my career, I have worked on various software development projects, gaining experience in different programming languages and technologies. I consider myself a person passionate about innovation and always looking to learn and improve my skills.',
-          'In my free time, I enjoy reading, watching movies, and playing video games. I also like traveling and experiencing new cultures, which has allowed me to broaden my perspective and enrich my personal and professional experience.'
+          'I was born in Santa Marta, Colombia on October 15, 1980. I am the second child of an older brother and two younger sisters. Our father bought us an Apple II computer for the family, which sparked my interest in computing.',
+          'But it was around the age of 2 that we got an Intel 386 PC at 30 Mhz (44 if you pressed turbo) when I really got to experience computing. I even tried to learn to program on my own in Basic with a console text editor. It was in college that I learned to program formally, and after that, I never looked back.',
+          'In my free time, I enjoy watching movies, playing video games, and going to the gym three times a week. I also like to experiment with code to clarify ideas (yes, I have fun coding). I am always open to exploring and learning new technologies and having fun while doing it.',
         ],
         'l_age' => 'Age',
         'l_residence' => 'Residence',
