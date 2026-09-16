@@ -19,7 +19,12 @@ class CvApiController extends Controller
     }
 
     public function profile(string $id) {
-      return CvProfile::with(['jobTitles','workExperiences'])->find($id);
+      return CvProfile::with([
+        'jobTitles',
+        'workExperiences' => function ($query) {
+          $query->orderBy('start', 'desc');
+        }
+      ])->find($id);
     }
 
     public function jobTitles() {
