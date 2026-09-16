@@ -14,6 +14,8 @@ class CvData
       'email' => 'marcohern@gmail.com',
       'age' => $age,
       'residence' => 'Colombia',
+
+      'facebook' => 'https://www.facebook.com/marcohern',
     ];
   }
 

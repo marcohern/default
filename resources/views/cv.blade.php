@@ -154,7 +154,7 @@
 							</div>
 
 							<!-- button -->
-							<a href="#" class="btn">
+							<a href="#section-contacts" class="btn">
 								<span class="animated-button"><span>{{$contact_me}}</span></span>
 								<i class="icon fas fa-chevron-right"></i>
 							</a>
@@ -1085,6 +1085,7 @@
 					<!-- contact form -->
 					<div class="contact-form">
 						<form id="cform" method="post">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 							<div class="group-val">
 								<div class="label">Full name <strong>*</strong></div>
    								<input type="text" name="name" placeholder="ej.: Genoveva Lian Hullt" />
@@ -1138,11 +1139,11 @@
 				<a target="_blank" href="https://www.facebook.com/">
 					<i class="icon fab fa-facebook-f"></i>
 				</a>
-				<a target="_blank" href="https://www.instagram.com/">
-					<i class="icon fab fa-instagram"></i>
+        <a href="{{ url('/cv/en') }}">
+          <span class="lang-icon">EN</span>
 				</a>
-				<a target="_blank" href="https://dribbble.com/">
-					<i class="icon fab fa-dribbble"></i>
+        <a href="{{ url('/cv/es') }}">
+          <span class="lang-icon">ES</span>
 				</a>
 			</div>
 		</footer>
