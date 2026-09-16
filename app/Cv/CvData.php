@@ -53,7 +53,25 @@ class CvData
         ],
         'l_age' => 'Edad',
         'l_residence' => 'Residencia',
-        'l_email' => 'Correo'
+        'l_email' => 'Correo',
+        'services' => 'Servicios',
+        'what_i_do' => 'Qué hago',
+        'what_i_do_items' => [
+          ['icon'=> 'fa-code', 'title' => 'Desarrollo de aplicacion', 'description' => 'Construyo applicaciones a la medida para satisfacer las necesidades de mis clientes.'],
+          ['icon'=> 'fa-chrome', 'title' => 'Desarrollo web', 'description' => 'Doy soporte y optimizacion para aplicaciones web existentes.'],
+          ['icon'=> 'fa-code', 'title' => 'Arquitecto de Soluciones', 'description' => 'Ayudo a mis clientes a diseñar y construir soluciones de software escalables y sostenibles.'],
+          ['icon'=> 'fa-gamepad', 'title' => 'Desarrollo de Videojuegos', 'description' => 'Nadie me cree pero algun dia terminare mi propio video juego y Blizzard se sentira muy tonto por no contratarme aquella vez que le envie mi hoja de vida.'],
+          ['icon'=> 'fa-video', 'title' => 'Renderizacion 3D y Video', 'description' => 'he trabajado en marketing haciendo animaciones y produccion de videos.'],
+        ]
+      ],
+
+      //Resume
+      'resume_info' => [
+        'l_experience' => 'Experiencia',
+        'l_studied_at' => 'Estudié en',
+        'l_education' => 'Educación',
+        'l_skills' => 'Habilidades',
+        'l_coding_skills' => 'Codificando'
       ]
     ];
   }
@@ -81,6 +99,7 @@ class CvData
       'intro' => 'Hello there! I am a software engineer with over 20 years of experience in the industry.' .
         'I have worked on a variety of projects, from small startups to large enterprises.' .
         'I am passionate about technology and I am always looking for new challenges.',
+
       //About
       'about_info' => [
         'about_me' => 'About Me',
@@ -92,7 +111,25 @@ class CvData
         ],
         'l_age' => 'Age',
         'l_residence' => 'Residence',
-        'l_email' => 'Email'
+        'l_email' => 'Email',
+        'services' => 'Services',
+        'what_i_do' => 'What I Do',
+        'what_i_do_items' => [
+          ['icon'=> 'fa-code', 'title' => 'Application Development', 'description' => 'I build custom applications to meet the needs of my clients.'],
+          ['icon'=> 'fab fa-chrome', 'title' => 'Web Development', 'description' => 'I provide support and optimization for existing web applications.'],
+          ['icon'=> 'fa-brain', 'title' => 'Solutions Architect', 'description' => 'I help my clients design and build scalable and sustainable software solutions.'],
+          ['icon'=> 'fa-gamepad', 'title' => 'Video Game Development', 'description' => "No one believes me but someday I will finish my own video game and Blizzard will feel very stupid for not hiring me that time I sent them my resume."],
+          ['icon'=> 'fa-video', 'title' => '3D Rendering and Video', 'description' => 'I have worked in marketing doing animations and video production.'],
+        ]
+      ],
+
+      //Resume
+      'resume_info' => [
+        'l_experience' => 'Experience',
+        'l_studied_at' => 'Studied at',
+        'l_education' => 'Education',
+        'l_skills' => 'Skills',
+        'l_coding_skills' => 'Coding Skills'
       ]
     ];
   }

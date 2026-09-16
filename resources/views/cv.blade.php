@@ -224,196 +224,29 @@
 
 					<!-- title -->
 					<div class="titles">
-						<div class="title">Services</div>
-						<div class="subtitle">What I Do</div>
+						<div class="title">{{$about_info['services']}}</div>
+						<div class="subtitle">{{$about_info['what_i_do']}}</div>
 					</div>
 
 					<!-- services items -->
 					<div class="service-items">
 
-						<div class="service-col">
+          @foreach ($about_info['what_i_do_items'] as $service)
+          <div class="service-col">
 							<div class="service-item">
-								<div class="icon"><i class="fas fa-brain"></i></div>
-								<div class="name">Economic <br />Science</div>
+								<div class="icon"><i class="fas {{$service['icon']}}"></i></div>
+								<div class="name">{{$service['title']}}</div>
 								<div class="single-post-text">
 									<p>
-										Economics is a social science concerned with the production, consumption of goods and services.
+										{{$service['description']}}
 									</p>
 								</div>
 							</div>
 						</div>
-						
-						<div class="service-col">
-							<div class="service-item">
-								<div class="icon"><i class="icon fas fa-ad"></i></div>
-								<div class="name">Marketing <br />& Advertising</div>
-								<div class="single-post-text">
-									<p>
-										Advertising Management though is a complex process of employing various media to sell a product or service.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="service-col">
-							<div class="service-item">
-								<div class="icon"><i class="icon fab fa-chrome"></i></div>
-								<div class="name">Web <br />Development</div>
-								<div class="single-post-text">
-									<p>
-										The web development process includes: web design, web content, client-side / server-side scripting and network security configuration.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="service-col">
-							<div class="service-item">
-								<div class="icon"><i class="icon fas fa-headphones"></i></div>
-								<div class="name">Music <br />Writing</div>
-								<div class="single-post-text">
-									<p>
-										Sheet music is the basic form in which Western classical music is notated so that it can be learned and performed by solo singers.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="service-col">
-							<div class="service-item">
-								<div class="icon"><i class="icon fas fa-gamepad"></i></div>
-								<div class="name">Game <br />Development</div>
-								<div class="single-post-text">
-									<p>
-										Come Up With a Game Idea. An idea is the first thing that comes to mind when a game is being described before creating.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="service-col">
-							<div class="service-item">
-								<div class="icon"><i class="fas fa-video"></i></div>
-								<div class="name">Photography <br />& Video</div>
-								<div class="single-post-text">
-									<p>
-										Sessions. If you are a photographer that spends most of the time in a portrait studio, you can charge for your session.
-									</p>
-								</div>
-							</div>
-						</div>
-
+          @endforeach
 					</div>
 
 					<div class="clear"></div>
-				</div>
-			</div>
-
-			<!-- Section Pricing -->
-			<div class="section pricing" id="section-pricing">
-				<div class="content">
-
-					<!-- title -->
-					<div class="titles">
-						<div class="title">Pricing</div>
-						<div class="subtitle">My Plans</div>
-					</div>
-
-					<!-- pricing items -->
-					<div class="content-carousel">
-						<div class="owl-carousel" data-slidesview="2" data-slidesview_mobile="1">
-
-							<div class="item">
-								<div class="pricing-item">
-									<div class="icons"><i class="fas fa-star"></i></div>
-									<div class="name">Basic</div>
-									<div class="amount">
-										<span class="number">
-											<span class="dollar">$</span>
-											<span>39</span>
-											<span class="period">hour</span>
-										</span>
-									</div>
-									<div class="feature-list">
-										<ul>
-											<li>Web Development</li>
-											<li>Advetising</li>
-											<li>Game Development</li>
-											<li class="disable">Music Writing</li>
-											<li class="disable">Photography</li>
-										</ul>
-									</div>
-									<a href="#" class="btn">
-										<span class="animated-button"><span>Buy Now</span></span>
-										<i class="icon fas fa-chevron-right"></i>
-									</a>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="pricing-item">
-									<div class="icons"><i class="fas fa-rocket"></i></div>
-									<div class="name">Premium</div>
-									<div class="amount">
-										<span class="number">
-											<span class="dollar">$</span>
-											<span>59</span>
-											<span class="period">hour</span>
-										</span>
-									</div>
-									<div class="feature-list">
-										<ul>
-											<li>Web Development</li>
-											<li>Advetising</li>
-											<li>Game Development</li>
-											<li>Music Writing</li>
-											<li>Photography <strong>new</strong></li>
-										</ul>
-									</div>
-									<a href="#" class="btn">
-										<span class="animated-button"><span>Buy Now</span></span>
-										<i class="icon fas fa-chevron-right"></i>
-									</a>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="pricing-item">
-									<div class="icons"><i class="fas fa-rocket"></i></div>
-									<div class="name">Ultimate</div>
-									<div class="amount">
-										<span class="number">
-											<span class="dollar">$</span>
-											<span>59</span>
-											<span class="period">hour</span>
-										</span>
-									</div>
-									<div class="feature-list">
-										<ul>
-											<li>Web Development</li>
-											<li>Advetising</li>
-											<li>Game Development</li>
-											<li>Music Writing</li>
-											<li>Photography <strong>new</strong></li>
-										</ul>
-									</div>
-									<a href="#" class="btn">
-										<span class="animated-button"><span>Buy Now</span></span>
-										<i class="icon fas fa-chevron-right"></i>
-									</a>
-								</div>
-							</div>
-
-						</div>
-
-						<!-- navigation -->
-						<div class="navs">
-							<span class="prev fas fa-chevron-left"></span>
-							<span class="next fas fa-chevron-right"></span>
-						</div>
-
-					</div>
-
 				</div>
 			</div>
 
@@ -510,8 +343,8 @@
 
 					<!-- title -->
 					<div class="titles">
-						<div class="title">Education</div>
-						<div class="subtitle">Studied at</div>
+						<div class="title">{{$resume_info['l_education']}}</div>
+						<div class="subtitle">{{$resume_info['l_studied_at']}}</div>
 					</div>
 
 					<!-- resume items -->
@@ -520,8 +353,8 @@
 
 							<div class="item">
 								<div class="resume-item active">
-									<div class="date">2011-2012</div>
-									<div class="name">Art University <br />New York</div>
+									<div class="date">2003-2005</div>
+									<div class="name">Programacion .NET <br />Universidad Jorge Tadeo Lozano, Santa Marta, Colombia</div>
 									<div class="single-post-text">
 										<p>
 											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
@@ -532,8 +365,8 @@
 
 							<div class="item">
 								<div class="resume-item">
-									<div class="date">2010-2011</div>
-									<div class="name">Programming Course <br />Paris</div>
+									<div class="date">2000-2005</div>
+									<div class="name">Ingenieria de Sistemas <br />Universidad Cooperativa de Colombia, Santa Marta</div>
 									<div class="single-post-text">
 										<p>
 											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
@@ -544,8 +377,8 @@
 
 							<div class="item">
 								<div class="resume-item">
-									<div class="date">2009-2010</div>
-									<div class="name">Web Design Course <br />London</div>
+									<div class="date">1983-1997</div>
+									<div class="name">Bachiller <br />Colegio Bilingue de Santa Marta</div>
 									<div class="single-post-text">
 										<p>
 											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
@@ -553,31 +386,6 @@
 									</div>
 								</div>
 							</div>
-
-							<div class="item">
-								<div class="resume-item">
-									<div class="date">2012-2014</div>
-									<div class="name">Art Course <br />London</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="resume-item">
-									<div class="date">2010-2012</div>
-									<div class="name">Art Course <br />London</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-
 						</div>
 
 						<!-- navigation -->
