@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\Cv\CvProfilesSeeder;
 use Database\Seeders\Cv\CvJobTitlesSeeder;
 use Database\Seeders\Cv\CvServicesSeeder;
+use Database\Seeders\Cv\CvExperiencesSeeder;
 
 class CvSeeder extends Seeder
 {
@@ -19,6 +20,7 @@ class CvSeeder extends Seeder
         CvProfilesSeeder::class,
         CvJobTitlesSeeder::class,
         CvServicesSeeder::class,
+        CvExperiencesSeeder::class,
       ]);
     }
 }
