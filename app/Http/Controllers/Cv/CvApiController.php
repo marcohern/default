@@ -23,7 +23,10 @@ class CvApiController extends Controller
         'jobTitles',
         'workExperiences' => function ($query) {
           $query->orderBy('start', 'desc');
-        }
+        },
+        'educationExperiences' => function ($query) {
+          $query->orderBy('start', 'desc');
+        },
       ])->find($id);
     }
 

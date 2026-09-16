@@ -17,4 +17,9 @@ class CvProfile extends Model
     {
         return $this->hasMany(CvExperience::class, 'profile_id','id');
     }
+    
+    public function educationExperiences(): HasMany
+    {
+        return $this->hasMany(CvEducations::class, 'profile_id','id');
+    }
 }

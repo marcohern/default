@@ -14,7 +14,7 @@ class CvExperiencesSeeder extends Seeder
     public function run(): void
     {
         
-        DB::table('cv_experiences')->insert([
+      DB::table('cv_experiences')->insert([
         ['profile_id' => 1, 'title' => 'Senior .NET Developer', 'company_name' => 'CI&T', 'present'=> false, 'start' => '2024-10-16', 'end' => '2026-05-15',
           'url' => 'https://ciandt.com/', 'linkedin' => 'https://www.linkedin.com/company/ciandt/',
           'overview' => 'I was hired to support and develop applications for their customers focused on the financial sector.'

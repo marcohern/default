@@ -8,6 +8,7 @@ use Database\Seeders\Cv\CvProfilesSeeder;
 use Database\Seeders\Cv\CvJobTitlesSeeder;
 use Database\Seeders\Cv\CvServicesSeeder;
 use Database\Seeders\Cv\CvExperiencesSeeder;
+use Database\Seeders\Cv\CvEducationsSeeder;
 
 class CvSeeder extends Seeder
 {
@@ -21,6 +22,7 @@ class CvSeeder extends Seeder
         CvJobTitlesSeeder::class,
         CvServicesSeeder::class,
         CvExperiencesSeeder::class,
+        CvEducationsSeeder::class,
       ]);
     }
 }
