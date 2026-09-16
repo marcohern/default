@@ -145,7 +145,7 @@
 
 							<!-- button -->
 							<a href="#" class="btn">
-								<span class="animated-button"><span>Contact Me</span></span>
+								<span class="animated-button"><span>{{$contact_me}}</span></span>
 								<i class="icon fas fa-chevron-right"></i>
 							</a>
 
@@ -166,8 +166,8 @@
 
 					<!-- title -->
 					<div class="titles">
-						<div class="title">About Me</div>
-						<div class="subtitle">My story</div>
+						<div class="title">{{$about_info['about_me']}}</div>
+						<div class="subtitle">{{$about_info['my_story']}}</div>
 					</div>
 
 					<!-- text -->
@@ -175,21 +175,21 @@
 						<div class="col">
 							<div class="single-post-text">
 								<p>
-									Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+									{{$about_info['my_story_items'][0]}}
 								</p>
 							</div>
 						</div>
 						<div class="col">
 							<div class="single-post-text">
 								<p>
-									Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+									{{$about_info['my_story_items'][1]}}
 								</p>
 							</div>
 						</div>
 						<div class="col col-full">
 							<div class="single-post-text">
 								<p>
-									Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.
+                  {{$about_info['my_story_items'][2]}}           
 								</p>
 							</div>
 						</div>
@@ -198,12 +198,9 @@
 					<!-- info list -->
 					<div class="info-list">
 						<ul>
-							<li><strong>Age:</strong> 24</li>
-							<li><strong>Residence:</strong> USA</li>
-							<li><strong>Freelance:</strong> Available</li>
-							<li><strong>Address:</strong> San Francisco</li>
-							<li><strong>Phone:</strong> +1 256 254 84 56</li>
-							<li><strong>E-mail:</strong> alejandroa@gmail.com</li>
+							<li><strong>{{$about_info['l_age']}}:</strong> {{$age}}</li>
+							<li><strong>{{$about_info['l_residence']}}:</strong> {{$residence}}</li>
+							<li><strong>{{$about_info['l_email']}}:</strong> {{$email}}</li>
 						</ul>
 					</div>
 
