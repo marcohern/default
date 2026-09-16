@@ -5,9 +5,9 @@
 	<!-- Meta -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="description" content="Marco Hernandez - Personal Portfolio" />
-	<meta name="keywords" content="resposnive, resume, personal, personal portfolio, cv, myour, portfolio" />
-	<meta name="author" content="Marco Hernandez" />
+	<meta name="description" content="{{ $description }}" />
+	<meta name="keywords" content="resposive, resume, personal, personal portfolio, cv" />
+	<meta name="author" content="{{ $first_name }} {{ $last_name }}" />
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 	<!-- Title -->
