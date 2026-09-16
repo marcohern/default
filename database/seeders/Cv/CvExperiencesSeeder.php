@@ -25,7 +25,27 @@ class CvExperiencesSeeder extends Seeder
         ],
         ['profile_id' => 1, 'title' => 'Tech Lead', 'company_name' => 'Jalasoft', 'present'=> false, 'start' => '2019-03-16', 'end' => '2022-08-15',
           'url' => 'https://www.jalasoft.com/', 'linkedin' => 'https://www.linkedin.com/company/jalasoft/',
-          'overview' => 'Bolivian company that was eager to develop web apps for clients in US and Canada.'
+          'overview' => 'Successfull Bolivian software company filled with young, fun and eager developers.'
+        ],
+        ['profile_id' => 1, 'title' => 'Senior Software Engineer', 'company_name' => 'Cafeto', 'present'=> false, 'start' => '2018-06-16', 'end' => '2019-03-15',
+          'url' => 'https://cafetosoftware.com/', 'linkedin' => 'https://www.linkedin.com/company/jalasoft/',
+          'overview' => 'Rag tag group of developers operating from Cali, Colombia. E very fun environment to work in.'
+        ],
+        ['profile_id' => 1, 'title' => 'Senior .NET Developer', 'company_name' => 'Global Accelerator Partners', 'present'=> false, 'start' => '2017-02-16', 'end' => '2018-05-15',
+          'url' => 'https://www.growthaccelerationpartners.com/', 'linkedin' => 'https://www.linkedin.com/company/growth-acceleration-partners/',
+          'overview' => 'Staff Aughmentation Company based in Medellin, Antioquia. Excelent environment and people.'
+        ],
+        ['profile_id' => 1, 'title' => 'Software Engineer', 'company_name' => 'Globant', 'present'=> false, 'start' => '2014-01-16', 'end' => '2016-06-15',
+          'url' => 'https://www.globant.com/', 'linkedin' => 'https://www.linkedin.com/company/globant/',
+          'overview' => 'Staff Aughmentation Company based in Medellin, Antioquia. Excelent environment and people.'
+        ],
+        ['profile_id' => 1, 'title' => 'Software Engineer', 'company_name' => 'Intcomex', 'present'=> false, 'start' => '2008-09-16', 'end' => '2013-12-15',
+          'url' => 'https://www.intcomex.com/', 'linkedin' => 'https://www.linkedin.com/company/intcomex/',
+          'overview' => 'Tech distribution company, at the time with an in-house IT department. A vero formative experience for me.'
+        ],
+        ['profile_id' => 1, 'title' => 'Software Consultant', 'company_name' => 'Informatica Siglo 21', 'present'=> false, 'start' => '2006-03-16', 'end' => '2008-09-15',
+          'url' => null, 'linkedin' => 'https://www.linkedin.com/company/inform-tica-siglo-21-ltda/',
+          'overview' => 'Tech distribution company, at the time with an in-house IT department. A vero formative experience for me.'
         ],
       ]);
     }
