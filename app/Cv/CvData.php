@@ -22,6 +22,7 @@ class CvData
   function getSpanishInfo() {
     return [
       //Menu
+      'dev_ribbon' => 'En Mantenimiento',
       'description' => 'Este es el portafolio Personal de Marco Hernandez. Ingeniero de Software con mas de 20 años de experiencia en la industria.',
       'home' => 'Inicio',
       'about' => 'Acerca de',
@@ -80,6 +81,7 @@ class CvData
 
   function getEnglishInfo() {
     return [
+      'dev_ribbon' => 'Under Development',
       'description' => 'This is the Personal Portfolio of Marco Hernandez. A software engineer with over 20 years of experience in the industry.',
       //Menu
       'home' => 'Home',
