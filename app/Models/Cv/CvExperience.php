@@ -5,7 +5,7 @@ namespace App\Models\Cv;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class CvJobTitle extends Model
+class CvExperience extends Model
 {
     //
     public function profile(): BelongsTo

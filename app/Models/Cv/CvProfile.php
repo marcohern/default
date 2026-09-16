@@ -12,4 +12,9 @@ class CvProfile extends Model
     {
         return $this->hasMany(CvJobTitle::class, 'profile_id','id');
     }
+    
+    public function workExperiences(): HasMany
+    {
+        return $this->hasMany(CvExperience::class, 'profile_id','id');
+    }
 }
