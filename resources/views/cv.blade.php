@@ -1119,15 +1119,13 @@
 						<div class="subname">{{$job_titles['softeng']}}</div>
 						<div class="info-list">
 							<ul>
-								<li><strong>Age:</strong> 24</li>
-								<li><strong>Residence:</strong> USA</li>
-								<li><strong>Freelance:</strong> Available</li>
-								<li><strong>Address:</strong> San Francisco</li>
-								<li><strong>Phone:</strong> +1 256 254 84 56</li>
-								<li><strong>E-mail:</strong> alejandroa@gmail.com</li>
+                <li><strong>{{$about_info['l_age']}}:</strong> {{$age}}</li>
+                <li><strong>{{$about_info['l_residence']}}:</strong> {{$residence}}</li>
+                <li><strong>{{$about_info['l_email']}}:</strong> {{$email}}</li>
+
 							</ul>
 						</div>
-						<div class="author">Joe Wilson</div>
+						<div class="author">{{$first_name}} {{$last_name}}</div>
 					</div>
 
 					<div class="clear"></div>
