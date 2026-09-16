@@ -47,7 +47,8 @@
 			$('.typed-subtitle').each(function(){
 				$(this).typed({
 					stringsElement: $(this).prev('.typing-subtitle'),
-					loop: true
+					loop: true,
+          backDelay: 2000,
 				});
 			});
 		}

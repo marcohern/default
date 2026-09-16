@@ -5,13 +5,13 @@
 	<!-- Meta -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="description" content="Personal Portfolio Template" />
+	<meta name="description" content="Marco Hernandez - Personal Portfolio" />
 	<meta name="keywords" content="resposnive, resume, personal, personal portfolio, cv, myour, portfolio" />
-	<meta name="author" content="beshleyua" />
+	<meta name="author" content="Marco Hernandez" />
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 	<!-- Title -->
-	<title>Myour - Personal Portfolio Template</title>
+	<title>{{ $first_name }} {{ $last_name }}</title>
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
 				
 			<!-- download cv button -->
 			<a href="#" class="btn download-cv-btn">
-				<span class="animated-button"><span>Download CV</span></span>
+				<span class="animated-button"><span>{{ $download_cv }}</span></span>
 				<i class="icon fas fa-download"></i>
 			</a>
 
@@ -73,27 +73,27 @@
 							<ul class="menu">
 								<li class="menu-item current-menu-item">
 									<a href="#section-started">
-										<span class="animated-button"><span>Home</span></span>
+										<span class="animated-button"><span>{{$home}}</span></span>
 									</a>
 								</li>
 								<li class="menu-item">
 									<a href="#section-about">
-										<span class="animated-button"><span>About</span></span>
+										<span class="animated-button"><span>{{$about}}</span></span>
 									</a>
 								</li>
 								<li class="menu-item">
 									<a href="#section-experience">
-										<span class="animated-button"><span>Resume</span></span>
+										<span class="animated-button"><span>{{$resume}}</span></span>
 									</a>
 								</li>
 								<li class="menu-item">
 									<a href="#section-portfolio">
-										<span class="animated-button"><span>Portfolio</span></span>
+										<span class="animated-button"><span>{{$portfolio}}</span></span>
 									</a>
 								</li>
 								<li class="menu-item">
 									<a href="#section-contacts">
-										<span class="animated-button"><span>Contact</span></span>
+										<span class="animated-button"><span>{{$contacts}}</span></span>
 									</a>
 								</li>
 							</ul>
@@ -131,16 +131,16 @@
 							<!-- subtitle -->
 							<div class="h-subtitles">
 								<div class="h-subtitle typing-subtitle">
-									<p>Consultant and Mentor</p>
-									<p>Web Designer</p>
-									<p>Programmer</p>
+                  @foreach ($job_titles as $title)
+                    <p>{{ $title }}</p>
+                  @endforeach
 								</div>
 								<span class="typed-subtitle"></span>
 							</div>
 
 							<!-- text -->
 							<div class="h-text">
-								Hello! I am Web Developer from United States, New York. I have rich experience in web site design and building, also I am good at wordpress. I love to talk with you about our unique.
+								{{$intro}}
 							</div>
 
 							<!-- button -->
