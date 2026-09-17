@@ -20,6 +20,8 @@ class CvProfilesSeeder extends Seeder
             'first_name' => 'Marco',
             'last_name' => 'Hernandez',
             'job_title' => 'Senior Software Engineer',
+            'residence' => 'Colombia',
+            'email' => 'marcohern@gmail.com',
             'birth' => '1980-10-15',
             'intro' => 'Hello there! I am a software engineer with over 20 years of experience in the industry.' .
               ' I have worked on a variety of projects, from small startups to large enterprises.' .

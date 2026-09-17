@@ -38,7 +38,8 @@
     <div class="info-list">
       <ul>
         <li><strong>{{__('cv.about.age')}}:</strong> {{$profile->age}}</li>
-        <li><strong>{{__('cv.about.residence')}}:</strong> [Colombia]</li>
+        <li><strong>{{__('cv.about.job_title')}}:</strong> {{$profile->job_title}}</li>
+        <li><strong>{{__('cv.about.residence')}}:</strong> {{$profile->residence}}</li>
         <li><strong>{{__('cv.about.email')}}:</strong> {{$profile->email}}</li>
       </ul>
     </div>

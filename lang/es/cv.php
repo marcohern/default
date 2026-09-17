@@ -18,6 +18,7 @@ return [
     'age' => 'Edad',
     'residence' => 'Residencia',
     'email' => 'Correo E',
+    'job_title' => 'Título',
     'services' => 'Servicios',
     'what_i_do' => 'Qué hago',
   ],

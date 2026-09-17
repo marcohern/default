@@ -17,6 +17,7 @@ return [
     'age' => 'Age',
     'residence' => 'Residence',
     'email' => 'Email',
+    'job_title' => 'Title',
     'services' => 'Services',
     'what_i_do' => 'What I do',
   ],

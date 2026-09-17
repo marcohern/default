@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('first_name',64);
             $table->string('last_name',64);
             $table->string('job_title',128);
+            $table->string('residence',64);
+            $table->string('email',128);
             $table->date('birth');
             $table->string('intro');
             $table->boolean('sluggable');
