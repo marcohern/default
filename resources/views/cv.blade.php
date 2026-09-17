@@ -79,40 +79,7 @@
 			<!-- header sidebar -->
 			<div class="header-sidebar">
 
-				<!-- top menu -->						
-				<div class="top-menu">
-					<div class="top-menu-nav">	
-						<div class="menu-topmenu-container">
-							<ul class="menu">
-								<li class="menu-item current-menu-item">
-									<a href="#section-started">
-										<span class="animated-button"><span>{{$home}}</span></span>
-									</a>
-								</li>
-								<li class="menu-item">
-									<a href="#section-about">
-										<span class="animated-button"><span>{{$about}}</span></span>
-									</a>
-								</li>
-								<li class="menu-item">
-									<a href="#section-experience">
-										<span class="animated-button"><span>{{$resume}}</span></span>
-									</a>
-								</li>
-								<li class="menu-item">
-									<a href="#section-portfolio">
-										<span class="animated-button"><span>{{$portfolio}}</span></span>
-									</a>
-								</li>
-								<li class="menu-item">
-									<a href="#section-contacts">
-										<span class="animated-button"><span>{{$contacts}}</span></span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+        <x-cv.menu-links/>
 
 			</div>
 
