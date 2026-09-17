@@ -65,7 +65,7 @@
 				
 			<!-- download cv button -->
 			<a href="#" class="btn download-cv-btn">
-				<span class="animated-button"><span>{{ $download_cv }}</span></span>
+				<span class="animated-button"><span>{{ __('cv.menu-links.download_cv') }}</span></span>
 				<i class="icon fas fa-download"></i>
 			</a>
 
