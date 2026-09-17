@@ -21,4 +21,8 @@ return [
     'services' => 'Services',
     'what_i_do' => 'What I do',
   ],
+  'resume' => [
+    'experience' => 'Experience',
+    'working_with' => 'Working With',
+  ],
 ];

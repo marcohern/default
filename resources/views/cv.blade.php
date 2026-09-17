@@ -62,7 +62,7 @@
 			<x-cv.section-start :profile="$profile"/>
 
       <x-cv.section-about :profile="$profile"/>
-      
+
 			<!-- Section Service -->
 			<div class="section service" id="section-services">
 				<div class="content">
@@ -95,92 +95,7 @@
 				</div>
 			</div>
 
-			<!-- Section Resume -->
-			<div class="section resume" id="section-experience">
-				<div class="content">
-
-					<!-- title -->
-					<div class="titles">
-						<div class="title">Experience</div>
-						<div class="subtitle">Working with</div>
-					</div>
-
-					<!-- resume items -->
-					<div class="content-carousel">
-						<div class="owl-carousel" data-slidesview="2" data-slidesview_mobile="1">
-
-							<div class="item">
-								<div class="resume-item active">
-									<div class="date">Present</div>
-									<div class="name">The Turin <br />Olympics</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="resume-item">
-									<div class="date">2016-2018</div>
-									<div class="name">Red <br />Drifting</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="resume-item">
-									<div class="date">2014-2016</div>
-									<div class="name">World <br />Economy</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="resume-item">
-									<div class="date">2012-2014</div>
-									<div class="name">Art Director <br />Facebook</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="resume-item">
-									<div class="date">2010-2012</div>
-									<div class="name">Art Director <br />Facebook</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-						<!-- navigation -->
-						<div class="navs">
-							<span class="prev fas fa-chevron-left"></span>
-							<span class="next fas fa-chevron-right"></span>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
+      <x-cv.section-experience :experiences="$profile->workExperiences"/>
 
 			<!-- Section Resume -->
 			<div class="section resume" id="section-education">
