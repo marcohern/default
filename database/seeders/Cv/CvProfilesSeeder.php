@@ -21,7 +21,7 @@ class CvProfilesSeeder extends Seeder
             'last_name' => 'Hernandez',
             'job_title' => 'Senior Software Engineer',
             'birth' => '1980-10-15',
-            'intro' => '[marcohern_cv_intro]',
+            'intro' => 'profile_intro',
             'sluggable' => false
         ]);
     }

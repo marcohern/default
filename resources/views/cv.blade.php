@@ -96,19 +96,11 @@
 						<!-- content started -->
 						<div class="started-content">
 
-							<!-- subtitle -->
-							<div class="h-subtitles">
-								<div class="h-subtitle typing-subtitle">
-                  @foreach ($job_titles as $title)
-                    <p>{{ $title }}</p>
-                  @endforeach
-								</div>
-								<span class="typed-subtitle"></span>
-							</div>
+							<x-cv.typed-job-titles :jobTitles="$profile->jobTitles"/>
 
 							<!-- text -->
 							<div class="h-text">
-								{{$intro}}
+								{{__('cv.'.$profile->intro)}}
 							</div>
 
 							<!-- button -->
