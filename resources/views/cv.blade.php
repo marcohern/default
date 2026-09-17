@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="{{App::getLocale()}}">
 <head>
 
 	<!-- Meta -->
@@ -100,7 +100,7 @@
 
 							<!-- text -->
 							<div class="h-text">
-								{{__('cv.'.$profile->intro)}}
+								{{__($profile->intro)}}
 							</div>
 
 							<!-- button -->

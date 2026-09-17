@@ -21,7 +21,9 @@ class CvProfilesSeeder extends Seeder
             'last_name' => 'Hernandez',
             'job_title' => 'Senior Software Engineer',
             'birth' => '1980-10-15',
-            'intro' => 'profile_intro',
+            'intro' => 'Hello there! I am a software engineer with over 20 years of experience in the industry.' .
+              ' I have worked on a variety of projects, from small startups to large enterprises.' .
+              ' I am passionate about technology and I am always looking for new challenges.',
             'sluggable' => false
         ]);
     }
