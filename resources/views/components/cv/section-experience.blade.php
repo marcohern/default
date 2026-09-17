@@ -20,7 +20,13 @@
               @else
               <div class="date">{{$experience->startYear}}-{{$experience->endYear}}</div>
               @endif
-              <div class="name">{{$experience->company_name}} <br />{{$experience->title}}</div>
+              <div class="name">{{$experience->company_name}} <br />{{__($experience->title)}}</div>
+              @if($experience->url)
+                <a target="_blank" href="{{$experience->url}}"><i class="fas fa-globe"></i></a>
+              @endif
+              @if($experience->linkedin)
+                <a target="_blank" href="{{$experience->linkedin}}"><i class="lang-icon">in</i></a>
+              @endif
               <div class="single-post-text">
                 <p>
                   {{$experience->overview}}
