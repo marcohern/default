@@ -29,7 +29,7 @@
               @endif
               <div class="single-post-text">
                 <p>
-                  {{$experience->overview}}
+                  {{__($experience->overview)}}
                 </p>
               </div>
             </div>
