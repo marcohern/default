@@ -5,23 +5,15 @@
 	<!-- Meta -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="description" content="{{ $description }}" />
+	<meta name="description" content="{{ $profile->description }}" />
 	<meta name="keywords" content="resposive, resume, personal, personal portfolio, cv" />
-	<meta name="author" content="{{ $first_name }} {{ $last_name }}" />
+	<meta name="author" content="{{ $profile->first_name }} {{ $profile->last_name }}" />
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ $first_name }} {{ $last_name }}" />
-  <meta property="og:url" content="{{ url()->current() }}" />
-  <meta property="og:description" content="{{ $description }}" />
-  <meta property="og:image" content="{{ Vite::asset('resources/images/cv/marco-820x1080.jpeg') }}" />
-  <meta property="og:image:secure_url" content="{{ Vite::asset('resources/images/cv/marco-820x1080.jpeg') }}" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="820" />
-  <meta property="og:image:height" content="1080" />
+  <x-cv.open-graph-headers :profile="$profile"/>
 
 	<!-- Title -->
-	<title>{{ $first_name }} {{ $last_name }}</title>
+	<title>{{ $profile->first_name }} {{ $profile->last_name }}</title>
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
@@ -139,8 +131,8 @@
 
 					<!-- title -->
 					<div class="titles">
-						<div class="title">{{$about_info['services']}}</div>
-						<div class="subtitle">{{$about_info['what_i_do']}}</div>
+						<div class="title">{{__('cv.about.services')}}</div>
+						<div class="subtitle">{{__('cv.about.what_i_do')}}</div>
 					</div>
 
 					<!-- services items -->

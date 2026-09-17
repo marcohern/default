@@ -18,5 +18,7 @@ return [
     'age' => 'Edad',
     'residence' => 'Residencia',
     'email' => 'Correo E',
+    'services' => 'Servicios',
+    'what_i_do' => 'Qué hago',
   ],
 ];
