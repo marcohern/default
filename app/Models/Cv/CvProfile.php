@@ -25,9 +25,14 @@ class CvProfile extends Model
         return $this->hasMany(CvEducations::class, 'profile_id','id');
     }
     
+    public function articles(): HasMany
+    {
+        return $this->hasMany(CvArticles::class, 'profile_id','id');
+    }
+    
     public function aboutArticles(): HasMany
     {
-        return $this->hasMany(CvArticles::class, 'profile_id','id')->withAttributes(['category' => 'about']);
+        return $this->articles()->withAttributes(['category' => 'about']);
     }
 
     protected function age(): Attribute

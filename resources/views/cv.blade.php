@@ -100,21 +100,21 @@
 						<div class="col">
 							<div class="single-post-text">
 								<p>
-									{{$profile->aboutArticles->firstWhere('slug','about1')->text}}
+									{{$profile->aboutArticles->firstWhere('slug','about-1')->text}}
 								</p>
 							</div>
 						</div>
 						<div class="col">
 							<div class="single-post-text">
 								<p>
-									Lorem Ipsum dolor sit amet
+									{{$profile->aboutArticles->firstWhere('slug','about-2')->text}}
 								</p>
 							</div>
 						</div>
 						<div class="col col-full">
 							<div class="single-post-text">
 								<p>
-                  Lorem Ipsum dolor sit amet        
+                  {{$profile->aboutArticles->firstWhere('slug','about-3')->text}}
 								</p>
 							</div>
 						</div>
