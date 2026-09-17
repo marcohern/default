@@ -14,4 +14,12 @@ return [
     'download_cv' => 'Descargar CV',
   ],
   'contact_me' => 'Contáctame',
+
+  'about' => [
+    'title' => 'Acerca de mi',
+    'my_story' => 'Mi historia',
+    'age' => 'Edad',
+    'residence' => 'Residencia',
+    'email' => 'Correo E',
+  ],
 ];

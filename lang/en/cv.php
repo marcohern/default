@@ -11,4 +11,11 @@ return [
     'download_cv' => 'Download CV',
   ],
   'contact_me' => 'Contact Me',
+  'about' => [
+    'title' => 'About Me',
+    'my_story' => 'My story',
+    'age' => 'Age',
+    'residence' => 'Residence',
+    'email' => 'Email',
+  ],
 ];

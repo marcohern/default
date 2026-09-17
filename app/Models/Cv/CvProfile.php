@@ -2,8 +2,10 @@
 
 namespace App\Models\Cv;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
 
 class CvProfile extends Model
 {
@@ -21,5 +23,14 @@ class CvProfile extends Model
     public function educationExperiences(): HasMany
     {
         return $this->hasMany(CvEducations::class, 'profile_id','id');
+    }
+
+    protected function age(): Attribute
+    {
+        return Attribute::make(
+            get: fn (mixed $value, array $attributes) => isset($attributes['birth'])
+                ? Carbon::parse($attributes['birth'])->age
+                : null,
+        );
     }
 }

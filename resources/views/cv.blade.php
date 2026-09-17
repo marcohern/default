@@ -91,8 +91,8 @@
 
 					<!-- title -->
 					<div class="titles">
-						<div class="title">{{$about_info['about_me']}}</div>
-						<div class="subtitle">{{$about_info['my_story']}}</div>
+						<div class="title">{{__('cv.about.title')}}</div>
+						<div class="subtitle">{{__('cv.about.my_story')}}</div>
 					</div>
 
 					<!-- text -->
@@ -100,21 +100,21 @@
 						<div class="col">
 							<div class="single-post-text">
 								<p>
-									{{$about_info['my_story_items'][0]}}
+									Lorem Ipsum dolor sit amet
 								</p>
 							</div>
 						</div>
 						<div class="col">
 							<div class="single-post-text">
 								<p>
-									{{$about_info['my_story_items'][1]}}
+									Lorem Ipsum dolor sit amet
 								</p>
 							</div>
 						</div>
 						<div class="col col-full">
 							<div class="single-post-text">
 								<p>
-                  {{$about_info['my_story_items'][2]}}           
+                  Lorem Ipsum dolor sit amet        
 								</p>
 							</div>
 						</div>
@@ -123,9 +123,9 @@
 					<!-- info list -->
 					<div class="info-list">
 						<ul>
-							<li><strong>{{$about_info['l_age']}}:</strong> {{$age}}</li>
-							<li><strong>{{$about_info['l_residence']}}:</strong> {{$residence}}</li>
-							<li><strong>{{$about_info['l_email']}}:</strong> {{$email}}</li>
+							<li><strong>{{__('cv.about.age')}}:</strong> {{$profile->age}}</li>
+							<li><strong>{{__('cv.about.residence')}}:</strong> {{$residence}}</li>
+							<li><strong>{{__('cv.about.email')}}:</strong> {{$email}}</li>
 						</ul>
 					</div>
 
