@@ -15,6 +15,17 @@ class CvArticlesSeeder extends Seeder
     {
         //
       DB::table('cv_articles')->insert([
+        ['profile_id' => 1, 'slug' => 'intro', 'category' => 'intro', 'locale' => 'en', 'ord'=> 1,
+          'text' => 'Hello there! I am a software engineer with over 20 years of experience in the industry.' .
+            ' I have worked on a variety of projects, from small startups to large enterprises.' .
+            ' I am passionate about technology and I am always looking for new challenges.',
+        ],
+        ['profile_id' => 1, 'slug' => 'intro', 'category' => 'intro', 'locale' => 'es', 'ord'=> 1,
+          'text' => '¡Hola! Soy un ingeniero de software con más de 20 años de experiencia en la industria.' .
+            ' He trabajado en una variedad de proyectos, desde pequeñas startups hasta grandes empresas.' .
+            ' Me apasiona la tecnología y siempre estoy buscando nuevos desafíos.'
+        ],
+
         ['profile_id' => 1, 'slug' => 'about-1', 'category' => 'about', 'locale' => 'en', 'ord'=> 1,
           'text' => 'I was born in Santa Marta, Colombia on October 15, 1980. I am the second child of an older brother and two younger sisters. Our father bought us an Apple II computer for the family, which sparked my interest in computing.'
         ],
