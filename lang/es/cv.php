@@ -1,6 +1,7 @@
 <?php
 
 return [
+  'under_maintenance' => 'En Mantenimiento',
   'menu-links' => [
     'home' => 'Inicio',
     'about' => 'Acerca de',

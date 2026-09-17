@@ -37,7 +37,7 @@
 <body class="home">
 
 	<!-- Under Development ribbon — delete this block to remove the banner -->
-	<div class="dev-ribbon"><span>{{$dev_ribbon}}</span></div>
+	<div class="dev-ribbon"><span>{{ __('cv.under_maintenance') }}</span></div>
 
 	<!-- Preloader -->
 	<div class="preloader">
