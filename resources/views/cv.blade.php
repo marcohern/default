@@ -90,7 +90,7 @@
 
 						<!-- title -->
 						<h1 class="h-title">
-							{{ $first_name }} <br />{{ $last_name }}
+							{{ $profile->first_name }} <br />{{ $profile->last_name }}
 						</h1>
 
 						<!-- content started -->
@@ -105,7 +105,7 @@
 
 							<!-- button -->
 							<a href="#section-contacts" class="btn">
-								<span class="animated-button"><span>{{$contact_me}}</span></span>
+								<span class="animated-button"><span>{{__('cv.contact_me')}}</span></span>
 								<i class="icon fas fa-chevron-right"></i>
 							</a>
 

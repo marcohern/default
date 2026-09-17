@@ -13,4 +13,5 @@ return [
     'contact' => 'Contáctame',
     'download_cv' => 'Descargar CV',
   ],
+  'contact_me' => 'Contáctame',
 ];
