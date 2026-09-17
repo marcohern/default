@@ -23,7 +23,7 @@ class CvProfileDao
         'educationExperiences' => function ($query) {
           $query->orderBy('start', 'desc');
         },
-        'aboutArticles'=> function($query) use($locale) {
+        'articles'=> function($query) use($locale) {
           $query->where(['locale' => $locale])->orderBy('ord', 'asc');
         }
       ])->find($profileId);

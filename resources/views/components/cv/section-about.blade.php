@@ -14,21 +14,21 @@
       <div class="col">
         <div class="single-post-text">
           <p>
-            {{$profile->aboutArticles->firstWhere('slug','about-1')->text}}
+            {{$profile->articles->firstWhere('slug','about-1')->text}}
           </p>
         </div>
       </div>
       <div class="col">
         <div class="single-post-text">
           <p>
-            {{$profile->aboutArticles->firstWhere('slug','about-2')->text}}
+            {{$profile->articles->firstWhere('slug','about-2')->text}}
           </p>
         </div>
       </div>
       <div class="col col-full">
         <div class="single-post-text">
           <p>
-            {{$profile->aboutArticles->firstWhere('slug','about-3')->text}}
+            {{$profile->articles->firstWhere('slug','about-3')->text}}
           </p>
         </div>
       </div>

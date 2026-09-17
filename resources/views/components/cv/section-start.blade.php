@@ -16,7 +16,7 @@
 
         <!-- text -->
         <div class="h-text">
-          {{__($profile->intro)}}
+          {{$profile->articles->firstWhere('slug','intro')->text}}
         </div>
 
         <!-- button -->
