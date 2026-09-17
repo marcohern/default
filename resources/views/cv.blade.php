@@ -31,20 +31,8 @@
 	<!-- Under Development ribbon — delete this block to remove the banner -->
 	<div class="dev-ribbon"><span>{{ __('cv.under_maintenance') }}</span></div>
 
-	<!-- Preloader -->
-	<div class="preloader">
-		<div class="box-1">
-			<div class="centrize full-width">
-				<div class="vertical-center">
-					<div class="spinner">
-						<div class="lines"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="box-2"></div>
-	</div>
-	
+	<x-cv.preloader/>
+  
 	<!-- Container -->
 	<div class="container">
 	
