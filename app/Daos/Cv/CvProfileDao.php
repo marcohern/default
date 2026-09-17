@@ -24,7 +24,7 @@ class CvProfileDao
           $query->orderBy('start', 'desc');
         },
         'aboutArticles'=> function($query) use($locale) {
-          $query->where('locale', $locale);
+          $query->where(['locale' => $locale])->orderBy('ord', 'asc');
         }
       ])->find($profileId);
     }

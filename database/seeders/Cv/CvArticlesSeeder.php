@@ -27,10 +27,10 @@ class CvArticlesSeeder extends Seeder
         ['profile_id' => 1, 'slug' => 'about-2', 'category' => 'about', 'locale' => 'es', 'ord'=> 2,
           'text' => 'Pero fue al rededor de mis 2 años, conseguimos una PC Intel 386 de 30 Mhz (44 si undias el turbo) cuando realmente pude experimentar con la computacion. Incluso intentando aprender a programar yo solo en Basic con un editor de texto de consola. Fue en la Universidad que aprendi a programar formalmente, y luego de eso, no mire atras.'
         ],
-        ['profile_id' => 1, 'slug' => 'about-3', 'category' => 'about', 'locale' => 'en', 'ord'=> 2,
+        ['profile_id' => 1, 'slug' => 'about-3', 'category' => 'about', 'locale' => 'en', 'ord'=> 3,
           'text' => 'In my free time, I enjoy watching movies, playing video games, and going to the gym three times a week. I also like to experiment with code to clarify ideas (yes, I have fun coding). I am always open to exploring and learning new technologies and having fun while doing it.'
         ],
-        ['profile_id' => 1, 'slug' => 'about-3', 'category' => 'about', 'locale' => 'es', 'ord'=> 2,
+        ['profile_id' => 1, 'slug' => 'about-3', 'category' => 'about', 'locale' => 'es', 'ord'=> 3,
           'text' => 'En mi tiempo libre, disfruto ver peliculas, jugar video juegos, y asisto al gym 3 veces por semana. Tambien me gusta experimentar con el codigo para aclarar ideas (asi es, me divierto codificando). Siempre estoy abierto para explorar y aprender nuevas tecnologias y divertirme mientras lo hago.'
         ],
       ]);

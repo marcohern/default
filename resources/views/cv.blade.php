@@ -100,7 +100,7 @@
 						<div class="col">
 							<div class="single-post-text">
 								<p>
-									Lorem Ipsum dolor sit amet
+									{{$profile->aboutArticles->firstWhere('slug','about1')->text}}
 								</p>
 							</div>
 						</div>

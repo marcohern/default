@@ -19,7 +19,7 @@ class CvApiController extends Controller
     }
 
     public function profile(string $id) {
-      return $this->cvProfileDao->find($id);
+      return $this->cvProfileDao->find($id, 'es');
     }
 
     public function jobTitles() {
