@@ -58,14 +58,7 @@
 	
 		<!-- Header -->
 		<header class="header">
-
-			<!-- logo -->
-			<div class="logo">
-				<a href="#">
-					<img class="logo-img" src="{{ Vite::asset('resources/images/cv/logo.png') }}" alt="" />
-					<span class="logo-lnk">{{ $first_name }} <br />{{ $last_name }}</span>
-				</a>
-			</div>
+			<x-cv.logo :profile="$profile"/>
 
 			<!-- menu button -->
 			<a href="#" class="menu-btn"><span></span></a>
