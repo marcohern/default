@@ -1,5 +1,11 @@
 <?php
 
 return [
-  'home' => 'Home'
+  'menu-links' => [
+    'home' => 'Home',
+    'about' => 'About',
+    'resume' => 'Curriculum',
+    'portfolio' => 'Portfolio',
+    'contact' => 'Contact',
+  ],
 ];
