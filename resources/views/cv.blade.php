@@ -32,7 +32,7 @@
 	<div class="dev-ribbon"><span>{{ __('cv.under_maintenance') }}</span></div>
 
 	<x-cv.preloader/>
-  
+
 	<!-- Container -->
 	<div class="container">
 	
@@ -51,18 +51,14 @@
 
 			<!-- header sidebar -->
 			<div class="header-sidebar">
-
         <x-cv.menu-links/>
-
 			</div>
 
 		</header>
 		
 		<!-- Wrapper -->
 		<div class="wrapper">
-
       <x-cv.portrait-image/>
-
 			<x-cv.section-start :profile="$profile"/>
 
 			<!-- Section About -->
