@@ -3,5 +3,11 @@
   "Mentour": "Mentor",
   "Full Stack Developer": "Desarollador Fullstack",
   "Web Development": "Desarollo Web",
-  "Solutions Architect": "Arquitecto de Soluciones"
+  "Solutions Architect": "Arquitecto de Soluciones",
+
+  "Senior .NET Developer": "Desarrollador .NET Senior",
+  "Tech Lead": "Lider Técnico",
+  "Senior Software Engineer": "Ingeniero de Software Senior",
+  "Software Engineer": "Ingeniero de Software",
+  "Software Consultant": "Consultor de Software"
 }
