@@ -5,7 +5,7 @@
 							<ul class="menu">
 								<li class="menu-item current-menu-item">
 									<a href="#section-started">
-										<span class="animated-button"><span>{{__('Home')}}</span></span>
+										<span class="animated-button"><span>{{__('cv.home')}}</span></span>
 									</a>
 								</li>
 								<li class="menu-item">
