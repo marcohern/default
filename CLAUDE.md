@@ -1,3 +1,51 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## What this is
+
+A personal CV / portfolio site for Marco Hernández, built on Laravel 13 (PHP 8.3) with Vite + Tailwind 4 for assets and SQLite for the database (`database/database.sqlite`; tests use `:memory:`). The README is the stock Laravel skeleton README and carries no project-specific information.
+
+The site is mid-migration: the rendered page (`/cv`) still reads its content from a hardcoded PHP class, while a parallel `cv_*` database schema and read-only JSON API are being built to replace it. `docs/todo.yml` tracks the remaining tables (skills, language_skills, coding_skills, clients, portfolio).
+
+## Commands
+
+```sh
+composer run dev          # `php artisan dev` — serve + queue + logs + vite together
+npm run dev               # vite only
+npm run build             # production assets (required, see Vite notes below)
+
+composer run test         # config:clear, then php artisan test
+php artisan test --compact --filter=test_cv_page_renders_the_cv_view
+vendor/bin/phpunit tests/Feature/CvPageTest.php
+
+php artisan migrate
+php artisan db:seed --class="Database\Seeders\Cv\CvSeeder"   # CV data; NOT wired into DatabaseSeeder
+vendor/bin/pint --dirty --format agent
+```
+
+`DatabaseSeeder` only creates a test user — `CvSeeder` must be called explicitly.
+
+## Architecture
+
+**Two content paths, deliberately separate right now:**
+
+1. **Rendered page** — [routes/web.php](routes/web.php) maps `/cv`, `/cv/es`, `/cv/en` to [CvController](app/Http/Controllers/Cv/CvController.php), which merges [CvData::getInfo()](app/Cv/CvData.php) (locale-independent facts) with `getSpanishInfo()` / `getEnglishInfo()` (all copy, nested arrays keyed by page section) and passes the flat array to the single `cv` view. Localization is done through these two methods, not Laravel's translation files. Adding a page section means adding a key to *both* language methods.
+
+2. **JSON API** — [routes/api.php](routes/api.php) exposes read-only `/api/cv_profiles`, `/api/cv_profile/{id}`, `/api/cv_job_titles` via [CvApiController](app/Http/Controllers/Cv/CvApiController.php), returning Eloquent models directly (no API Resources yet). `CvProfile` hasMany `CvJobTitle`, `CvExperience`, `CvEducations`, all on `profile_id`. The `profile` endpoint eager-loads and orders experience/education by `start desc`.
+
+Schema conventions in `database/migrations/2026_09_16_*`: explicit `bigInteger('profile_id')` plus a manual `foreign()` constraint (not `foreignId()`), an `ord` integer for hand-ordered lists, `present` boolean + nullable `end` for open-ended date ranges, and a composite index on `profile_id` + the sort column. CV seeders use raw `DB::table()->insert()` with fixed ids, not factories.
+
+CV classes are namespaced by feature: `App\Cv`, `App\Http\Controllers\Cv`, `App\Models\Cv`, `Database\Seeders\Cv`.
+
+## Frontend / Vite (non-obvious)
+
+`templates/html/myour/` is the original purchased HTML theme, kept as an untouched reference. Its assets were copied into `resources/{css,js,images,fonts}/cv/` — edit the copies under `resources/`, never `templates/`.
+
+The theme's jQuery plugins are global/UMD scripts that must load as classic `<script>` tags in a fixed order at the bottom of [cv.blade.php](resources/views/cv.blade.php#L1158-L1170). [resources/js/cv.js](resources/js/cv.js) exists only to `import.meta.glob` those scripts and the CV images so they land in the Vite manifest; the blade then references each one with `Vite::asset(...)`. Do not convert them to ES imports.
+
+Because `Vite::asset()` reads the manifest, the CV page 500s without built assets: run `npm run build`, or `npm run dev` with the dev server up. Tests that hit the page use `->withoutVite()`.
+
 <laravel-boost-guidelines>
 === foundation rules ===
 
