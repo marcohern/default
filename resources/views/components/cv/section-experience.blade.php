@@ -16,11 +16,11 @@
           <div class="item">
             <div class="resume-item active">
               @if ($experience->present)
-              <div class="date">Present</div>
+              <div class="date">{{__('cv.resume.present')}}</div>
               @else
               <div class="date">{{$experience->startYear}}-{{$experience->endYear}}</div>
               @endif
-              <div class="name">{{$experience->title}} <br />{{$experience->company_name}}</div>
+              <div class="name">{{$experience->company_name}} <br />{{$experience->title}}</div>
               <div class="single-post-text">
                 <p>
                   {{$experience->overview}}

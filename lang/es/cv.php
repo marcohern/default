@@ -23,6 +23,7 @@ return [
     'what_i_do' => 'Qué hago',
   ],
   'resume' => [
+    'present' => 'Actualmente',
     'experience' => 'Experiencia',
     'working_with' => 'Trabajando con',
   ],

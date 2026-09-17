@@ -22,6 +22,7 @@ return [
     'what_i_do' => 'What I do',
   ],
   'resume' => [
+    'present' => 'Present',
     'experience' => 'Experience',
     'working_with' => 'Working With',
   ],
