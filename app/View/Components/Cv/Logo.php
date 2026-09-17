@@ -2,10 +2,10 @@
 
 namespace App\View\Components\Cv;
 
+use App\Models\Cv\CvProfile;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use App\Models\Cv\CvProfile;
 
 class Logo extends Component
 {
