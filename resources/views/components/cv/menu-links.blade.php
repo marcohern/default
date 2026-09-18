@@ -15,12 +15,12 @@
 								</li>
 								<li class="menu-item">
 									<a href="#section-experience">
-										<span class="animated-button"><span>{{__('cv.menu-links.resume')}}</span></span>
+										<span class="animated-button"><span>{{__('cv.menu-links.experience')}}</span></span>
 									</a>
 								</li>
 								<li class="menu-item">
-									<a href="#section-portfolio">
-										<span class="animated-button"><span>{{__('cv.menu-links.portfolio')}}</span></span>
+									<a href="#section-education">
+										<span class="animated-button"><span>{{__('cv.menu-links.education')}}</span></span>
 									</a>
 								</li>
 								<li class="menu-item">

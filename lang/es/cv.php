@@ -6,6 +6,8 @@ return [
     'home' => 'Inicio',
     'about' => 'Acerca de',
     'resume' => 'Curriculum',
+    'education' => 'Educación',
+    'experience' => 'Experience',
     'portfolio' => 'Portafolio',
     'contact' => 'Contáctame',
     'download_cv' => 'PDF (Inglés)',
