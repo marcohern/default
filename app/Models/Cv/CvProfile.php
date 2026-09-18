@@ -34,6 +34,11 @@ class CvProfile extends Model
     {
         return $this->articles()->withAttributes(['category' => 'about']);
     }
+    
+    public function services(): HasMany
+    {
+        return $this->hasMany(CvService::class, 'profile_id','id');
+    }
 
     protected function age(): Attribute
     {
