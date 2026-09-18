@@ -25,4 +25,9 @@ class CvApiController extends Controller
     public function jobTitles() {
       return CvJobTitle::all();
     }
+
+    public function contact(Request $r) {
+      $data = $r->all();
+      return ['status' => 1, 'data' => $data];
+    }
 }

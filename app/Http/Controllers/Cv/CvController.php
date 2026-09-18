@@ -47,4 +47,9 @@ class CvController extends Controller
     $data['profile'] = $profile;
     return view('cv', $data);
   }
+
+  public function contact(Request $r)
+  {
+    dd($r->all());
+  }
 }
