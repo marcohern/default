@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string('description');
             $table->integer('score');
             $table->integer('ord');
+            $table->timestamps();
 
             $table->index(['profile_id','ord']);
-            $table->timestamps();
+            
+            $table->foreign('profile_id')->references('id')->on('cv_profiles');
         });
     }
 

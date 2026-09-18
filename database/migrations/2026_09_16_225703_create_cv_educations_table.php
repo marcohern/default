@@ -23,6 +23,8 @@ return new class extends Migration
             $table->date('start');
             $table->date('end')->nullable();
             $table->timestamps();
+            
+            $table->foreign('profile_id')->references('id')->on('cv_profiles');
         });
     }
 

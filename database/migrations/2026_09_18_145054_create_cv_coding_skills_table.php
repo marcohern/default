@@ -21,6 +21,8 @@ return new class extends Migration
             $table->timestamps();
 
             $table->index(['profile_id','ord']);
+
+            $table->foreign('profile_id')->references('id')->on('cv_profiles');
         });
     }
 
