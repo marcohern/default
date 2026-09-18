@@ -63,7 +63,7 @@
 
       <x-cv.section-about :profile="$profile"/>
 
-			<x-cv.section-service :services="$profile->services"/>
+			<x-cv.section-services :services="$profile->services"/>
 
       <x-cv.section-experience :experiences="$profile->workExperiences"/>
 

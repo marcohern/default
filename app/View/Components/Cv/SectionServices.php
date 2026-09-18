@@ -22,6 +22,6 @@ class SectionService extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.cv.section-service');
+        return view('components.cv.section-services');
     }
 }
