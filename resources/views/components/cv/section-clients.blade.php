@@ -16,7 +16,7 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
-              <img src="{{ Vite::asset('resources/images/cv/client2.png') }}" alt="" />
+              <img src="{{ url('/logos/omnimed.svg')}}" alt="" />
             </a>
           </div>
         </div>
@@ -24,7 +24,7 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
-              <img src="{{ Vite::asset('resources/images/cv/client3.png') }}" alt="" />
+              <img src="{{ url('/logos/intcomex.svg')}}" alt="" />
             </a>
           </div>
         </div>
@@ -32,7 +32,7 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
-              <img src="{{ Vite::asset('resources/images/cv/client1.png') }}" alt="" />
+              <img src="{{ url('/logos/globant.svg')}}" alt="" />
             </a>
           </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
-              <img src="{{ Vite::asset('resources/images/cv/client4.png') }}" alt="" />
+              <img src="{{ url('/logos/carnival.svg')}}" alt="" />
             </a>
           </div>
         </div>
@@ -48,7 +48,7 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
-              <img src="{{ Vite::asset('resources/images/cv/client2.png') }}" alt="" />
+              <img src="{{ url('/logos/gap.svg')}}" alt="" />
             </a>
           </div>
         </div>
@@ -56,27 +56,11 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
-              <img src="{{ Vite::asset('resources/images/cv/client3.png') }}" alt="" />
+              <img src="{{ url('/logos/american-airlines.svg')}}" alt="" />
             </a>
           </div>
         </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ Vite::asset('resources/images/cv/client1.png') }}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ Vite::asset('resources/images/cv/client4.png') }}" alt="" />
-            </a>
-          </div>
-        </div>
-
+        
       </div>
 
       <!-- navigation -->
