@@ -9,7 +9,10 @@ use Illuminate\Support\Carbon;
 
 class CvProfile extends Model
 {
-    //
+    protected $casts = [
+      'birth' => 'date'
+    ];
+    
     public function jobTitles(): HasMany
     {
         return $this->hasMany(CvJobTitle::class, 'profile_id','id');
@@ -22,30 +25,26 @@ class CvProfile extends Model
     
     public function educationExperiences(): HasMany
     {
-        return $this->hasMany(CvEducations::class, 'profile_id','id');
+      return $this->hasMany(CvEducations::class, 'profile_id','id');
     }
     
     public function articles(): HasMany
     {
-        return $this->hasMany(CvArticles::class, 'profile_id','id');
+      return $this->hasMany(CvArticles::class, 'profile_id','id');
     }
     
     public function aboutArticles(): HasMany
     {
-        return $this->articles()->withAttributes(['category' => 'about']);
+      return $this->articles()->withAttributes(['category' => 'about']);
     }
     
     public function services(): HasMany
     {
-        return $this->hasMany(CvService::class, 'profile_id','id');
+      return $this->hasMany(CvService::class, 'profile_id','id');
     }
 
     protected function age(): Attribute
     {
-        return Attribute::make(
-            get: fn (mixed $value, array $attributes) => isset($attributes['birth'])
-                ? Carbon::parse($attributes['birth'])->age
-                : null,
-        );
+      return Attribute::get(fn () => $this->birth?->age);
     }
 }
