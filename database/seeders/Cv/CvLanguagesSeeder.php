@@ -21,6 +21,9 @@ class CvLanguagesSeeder extends Seeder
         ['profile_id' => 1, 'name' => 'Spanish', 'locale' => 'es', 'ord'=> 2, 'score' => 100,
           'description' => 'Mi idioma nativo.',
         ],
+        ['profile_id' => 1, 'name' => 'Français', 'locale' => 'fr', 'ord'=> 3, 'score' => 8,
+          'description' => 'Je ne parle pas beaucoup, ni très bien.',
+        ],
       ]);
     }
 }

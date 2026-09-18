@@ -71,7 +71,7 @@
 
       <!--x-cv.section-design-skills/-->
 
-      <x-cv.section-language-skills/>
+      <x-cv.section-language-skills :languages="$profile->languages"/>
 
 			<!-- Section Coding Skills -->
 			<div class="section skills" id="section-skills-code">

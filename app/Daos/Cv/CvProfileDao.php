@@ -28,6 +28,9 @@ class CvProfileDao
         },
         'services' => function ($query) {
           $query->orderBy('ord', 'asc');
+        },
+        'languages' => function ($query) {
+          $query->orderBy('ord', 'asc');
         }
       ])->find($profileId);
     }

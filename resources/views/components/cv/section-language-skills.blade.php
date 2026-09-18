@@ -12,58 +12,21 @@
     <!-- skills items -->
     <div class="skills dotted">
       <ul>
-        <li>
-          <div class="name">English</div>
-          <div class="single-post-text">
-            <p>
-              Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-            </p>
-          </div>
-          <div class="progress">
-            <div class="percentage" style="width: 90%;">
-              <span class="percent">90%</span>
+        @foreach($languages as $language)
+          <li>
+            <div class="name">{{$language->name}}</div>
+            <div class="single-post-text">
+              <p>
+                {{$language->description}}
+              </p>
             </div>
-          </div>
-        </li>
-        <li>
-          <div class="name">German</div>
-          <div class="single-post-text">
-            <p>
-              Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-            </p>
-          </div>
-          <div class="progress">
-            <div class="percentage" style="width: 70%;">
-              <span class="percent">70%</span>
+            <div class="progress">
+              <div class="percentage" style="width: {{$language->score}}%;">
+                <span class="percent">{{$language->score}}%</span>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <div class="name">Italian</div>
-          <div class="single-post-text">
-            <p>
-              Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-            </p>
-          </div>
-          <div class="progress">
-            <div class="percentage" style="width: 55%;">
-              <span class="percent">55%</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="name">French</div>
-          <div class="single-post-text">
-            <p>
-              Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
-            </p>
-          </div>
-          <div class="progress">
-            <div class="percentage" style="width: 85%;">
-              <span class="percent">85%</span>
-            </div>
-          </div>
-        </li>
+          </li>
+        @endforeach
       </ul>
     </div>
 
