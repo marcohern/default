@@ -11,6 +11,7 @@ use Database\Seeders\Cv\CvExperiencesSeeder;
 use Database\Seeders\Cv\CvEducationsSeeder;
 use Database\Seeders\Cv\CvArticlesSeeder;
 use Database\Seeders\Cv\CvLanguagesSeeder;
+use Database\Seeders\Cv\CvCodingSkillsSeeder;
 
 class CvSeeder extends Seeder
 {
@@ -27,6 +28,7 @@ class CvSeeder extends Seeder
         CvEducationsSeeder::class,
         CvArticlesSeeder::class,
         CvLanguagesSeeder::class,
+        CvCodingSkillsSeeder::class,
       ]);
     }
 }
