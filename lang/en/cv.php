@@ -25,5 +25,7 @@ return [
     'present' => 'Present',
     'experience' => 'Experience',
     'working_with' => 'Working With',
+    'education' => 'Education',
+    'studied_at' => 'Studied At',
   ],
 ];

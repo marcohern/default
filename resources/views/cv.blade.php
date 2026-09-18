@@ -67,67 +67,7 @@
 
       <x-cv.section-experience :experiences="$profile->workExperiences"/>
 
-			<!-- Section Resume -->
-			<div class="section resume" id="section-education">
-				<div class="content">
-
-					<!-- title -->
-					<div class="titles">
-						<div class="title">{{$resume_info['l_education']}}</div>
-						<div class="subtitle">{{$resume_info['l_studied_at']}}</div>
-					</div>
-
-					<!-- resume items -->
-					<div class="content-carousel">
-						<div class="owl-carousel" data-slidesview="2" data-slidesview_mobile="1">
-
-							<div class="item">
-								<div class="resume-item active">
-									<div class="date">2003-2005</div>
-									<div class="name">Programacion .NET <br />Universidad Jorge Tadeo Lozano, Santa Marta, Colombia</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="resume-item">
-									<div class="date">2000-2005</div>
-									<div class="name">Ingenieria de Sistemas <br />Universidad Cooperativa de Colombia, Santa Marta</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="resume-item">
-									<div class="date">1983-1997</div>
-									<div class="name">Bachiller <br />Colegio Bilingue de Santa Marta</div>
-									<div class="single-post-text">
-										<p>
-											Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- navigation -->
-						<div class="navs">
-							<span class="prev fas fa-chevron-left"></span>
-							<span class="next fas fa-chevron-right"></span>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
+			<x-cv.section-education :education="$profile->educationExperiences"/>
 
 			<!-- Section Design Skills -->
 			<div class="section skills" id="section-skills">

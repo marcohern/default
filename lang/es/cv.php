@@ -26,5 +26,7 @@ return [
     'present' => 'Actualmente',
     'experience' => 'Experiencia',
     'working_with' => 'Trabajando con',
+    'education' => 'Educación',
+    'studied_at' => 'Estudie en',
   ],
 ];
