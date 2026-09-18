@@ -50,13 +50,12 @@ class CvController extends Controller
     return view('cv', $data);
   }
   
-  
-
-    public function contact(Request $r) {
-      $name = $r->input('name');
-      $email = $r->input('email');
-      $content = $r->input('message');
-       Mail::to('marcohern@gmail.com')->send(new ContactMe($email, $name, $content));
-      return ['status' => 1];
-    }
+  public function contact(Request $r)
+  {
+    $name = $r->input('name');
+    $email = $r->input('email');
+    $content = $r->input('message');
+      Mail::to('marcohern@gmail.com')->send(new ContactMe($email, $name, $content));
+    return ['status' => 1];
+  }
 }

@@ -12,4 +12,3 @@ Route::get('/user', function (Request $request) {
 Route::get('/cv_profiles', [CvApiController::class, 'profiles']);
 Route::get('/cv_profile/{id}', [CvApiController::class, 'profile']);
 Route::get('/cv_job_titles', [CvApiController::class, 'jobTitles']);
-Route::post('/cv/contact', [CvApiController::class, 'contact'])->name('contact');
