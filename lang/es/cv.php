@@ -7,7 +7,7 @@ return [
     'about' => 'Acerca de',
     'resume' => 'Curriculum',
     'education' => 'Educación',
-    'experience' => 'Experience',
+    'experience' => 'Experiencia',
     'portfolio' => 'Portafolio',
     'contact' => 'Contáctame',
     'download_cv' => 'PDF (Inglés)',
