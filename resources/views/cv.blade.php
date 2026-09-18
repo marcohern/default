@@ -63,37 +63,7 @@
 
       <x-cv.section-about :profile="$profile"/>
 
-			<!-- Section Service -->
-			<div class="section service" id="section-services">
-				<div class="content">
-
-					<!-- title -->
-					<div class="titles">
-						<div class="title">{{__('cv.about.services')}}</div>
-						<div class="subtitle">{{__('cv.about.what_i_do')}}</div>
-					</div>
-
-					<!-- services items -->
-					<div class="service-items">
-
-          @foreach ($about_info['what_i_do_items'] as $service)
-          <div class="service-col">
-							<div class="service-item">
-								<div class="icon"><i class="fas {{$service['icon']}}"></i></div>
-								<div class="name">{{$service['title']}}</div>
-								<div class="single-post-text">
-									<p>
-										{{$service['description']}}
-									</p>
-								</div>
-							</div>
-						</div>
-          @endforeach
-					</div>
-
-					<div class="clear"></div>
-				</div>
-			</div>
+			<x-cv.section-service :services="$profile->services"/>
 
       <x-cv.section-experience :experiences="$profile->workExperiences"/>
 
