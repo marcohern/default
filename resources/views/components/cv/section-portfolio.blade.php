@@ -5,8 +5,8 @@
 
     <!-- title -->
     <div class="titles">
-      <div class="title">Portfolio</div>
-      <div class="subtitle">Latest works</div>
+      <div class="title">{{__('cv.portfolio.label')}}</div>
+      <div class="subtitle">{{__('cv.portfolio.latest_works')}}</div>
     </div>
 
     <!-- filter -->

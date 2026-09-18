@@ -5,8 +5,8 @@
 
     <!-- title -->
     <div class="titles">
-      <div class="title">Clients</div>
-      <div class="subtitle">My partners</div>
+      <div class="title">{{__('cv.resume.clients')}}</div>
+      <div class="subtitle">{{__('cv.resume.my_partners')}}</div>
     </div>
 
     <!-- clients items -->

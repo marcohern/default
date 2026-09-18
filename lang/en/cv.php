@@ -11,6 +11,7 @@ return [
     'download_cv' => 'PDF',
   ],
   'contact_me' => 'Contact Me',
+  
   'about' => [
     'title' => 'About Me',
     'my_story' => 'My story',
@@ -31,5 +32,11 @@ return [
     'rnw' => 'I can communicate in',
     'coding_skills' => 'Coding Skills',
     'developing_on' => 'Developing on',
+    'clients' => 'Clients',
+    'my_partners' => 'My partners',
   ],
+  'portfolio' => [
+    'label' => 'Portfolio',
+    'latest_works' => 'Latest works',
+  ]
 ];

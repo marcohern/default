@@ -32,5 +32,11 @@ return [
     'rnw' => 'Puedo comunicarme en',
     'coding_skills' => 'Lenguages de Programación',
     'developing_on' => 'Desarrollo en',
+    'clients' => 'Clientes',
+    'my_partners' => 'Mis partners',
   ],
+  'portfolio' => [
+    'label' => 'Portafolio',
+    'latest_works' => 'Ultimos trabajos',
+  ]
 ];
