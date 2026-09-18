@@ -16,6 +16,14 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
+              <img src="{{ url('/logos/cit.svg')}}" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="clients-item">
+            <a target="_blank" href="#">
               <img src="{{ url('/logos/bairesdev.svg')}}" alt="" />
             </a>
           </div>
@@ -32,7 +40,7 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
-              <img src="{{ url('/logos/intcomex.svg')}}" alt="" />
+              <img src="{{ url('/logos/dealerrater.svg')}}" alt="" />
             </a>
           </div>
         </div>
@@ -64,7 +72,23 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
+              <img src="{{ url('/logos/gire.svg')}}" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="clients-item">
+            <a target="_blank" href="#">
               <img src="{{ url('/logos/american-airlines.svg')}}" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="clients-item">
+            <a target="_blank" href="#">
+              <img src="{{ url('/logos/intcomex.svg')}}" alt="" />
             </a>
           </div>
         </div>
