@@ -16,6 +16,14 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="#">
+              <img src="{{ url('/logos/bairesdev.svg')}}" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="clients-item">
+            <a target="_blank" href="#">
               <img src="{{ url('/logos/omnimed.svg')}}" alt="" />
             </a>
           </div>
