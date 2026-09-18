@@ -5,8 +5,8 @@
     
     <!-- title -->
     <div class="titles">
-      <div class="title">{{__('Coding Skills')}}</div>
-      <div class="subtitle">{{__('Developing on')}}</div>
+      <div class="title">{{__('cv.resume.coding_skills')}}</div>
+      <div class="subtitle">{{__('cv.resume.developing_on')}}</div>
     </div>
 
     <!-- skills items-->

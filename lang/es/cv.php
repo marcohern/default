@@ -30,5 +30,7 @@ return [
     'studied_at' => 'Estudie en',
     'lang_skills' => 'Idiomas',
     'rnw' => 'Puedo comunicarme en',
+    'coding_skills' => 'Lenguages de Programación',
+    'developing_on' => 'Desarrollo en',
   ],
 ];

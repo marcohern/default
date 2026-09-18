@@ -29,5 +29,7 @@ return [
     'studied_at' => 'Studied At',
     'lang_skills' => 'Language Skills',
     'rnw' => 'I can communicate in',
+    'coding_skills' => 'Coding Skills',
+    'developing_on' => 'Developing on',
   ],
 ];
