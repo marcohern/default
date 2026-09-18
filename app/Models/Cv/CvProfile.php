@@ -25,7 +25,7 @@ class CvProfile extends Model
     
     public function educationExperiences(): HasMany
     {
-      return $this->hasMany(CvEducations::class, 'profile_id','id');
+      return $this->hasMany(CvEducation::class, 'profile_id','id');
     }
     
     public function articles(): HasMany

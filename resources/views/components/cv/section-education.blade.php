@@ -25,12 +25,13 @@
             <div class="name">{{$ed->school_name}} <br />{{$ed->degree}}</div>
             <div class="single-post-text">
               <p>
-                {{$ed->overview}}
+                {{__($ed->overview)}}
               </p>
             </div>
           </div>
         </div>
         @endforeach
+      </div>
       <!-- navigation -->
       <div class="navs">
         <span class="prev fas fa-chevron-left"></span>

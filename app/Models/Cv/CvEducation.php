@@ -5,8 +5,9 @@ namespace App\Models\Cv;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class CvEducations extends Model
+class CvEducation extends Model
 {
+  protected $table = "cv_educations";
     //
     public function profile(): BelongsTo
     {
