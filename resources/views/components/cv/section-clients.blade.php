@@ -14,6 +14,7 @@
       <div class="owl-carousel" data-slidesview="4" data-slidesview_mobile="2">
         @foreach([
           ['/logos/cit.svg','https://ciandt.com/','CI&T'],
+          ['/logos/m.svg','#','X'],
           ['/logos/cmgfi.svg','https://www.cmgfi.com/','CMG Finantial'],
           ['/logos/bairesdev.svg','https://www.bairesdev.com/','BairesDev'],
           ['/logos/omnimed.svg','https://www.omnimed.ai/','Omnimed'],
