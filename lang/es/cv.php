@@ -8,7 +8,7 @@ return [
     'resume' => 'Curriculum',
     'portfolio' => 'Portafolio',
     'contact' => 'Contáctame',
-    'download_cv' => 'Descargar CV',
+    'download_cv' => 'PDF (Inglés)',
   ],
   'contact_me' => 'Contáctame',
 
