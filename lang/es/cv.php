@@ -28,5 +28,7 @@ return [
     'working_with' => 'Trabajando con',
     'education' => 'Educación',
     'studied_at' => 'Estudie en',
+    'lang_skills' => 'Idiomas',
+    'rnw' => 'Puedo comunicarme en',
   ],
 ];

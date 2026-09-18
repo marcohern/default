@@ -27,5 +27,7 @@ return [
     'working_with' => 'Working With',
     'education' => 'Education',
     'studied_at' => 'Studied At',
+    'lang_skills' => 'Language Skills',
+    'rnw' => 'I can communicate in',
   ],
 ];
