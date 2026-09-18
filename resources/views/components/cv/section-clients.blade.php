@@ -12,94 +12,27 @@
     <!-- clients items -->
     <div class="content-carousel">
       <div class="owl-carousel" data-slidesview="4" data-slidesview_mobile="2">
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/cit.svg')}}" alt="" />
-            </a>
+        @foreach([
+          ['/logos/cit.svg','https://ciandt.com/','CI&T'],
+          ['/logos/bairesdev.svg','https://www.bairesdev.com/','BairesDev'],
+          ['/logos/omnimed.svg','https://www.omnimed.ai/','Omnimed'],
+          ['/logos/dealerrater.svg','https://www.dealerrater.com','DealerRater'],
+          ['/logos/cafeto.svg','https://www.cafetosoftware.com','Cafeto'],
+          ['/logos/globant.svg','https://globant.com/','Globant'],
+          ['/logos/carnival.svg','https://www.carnival.com/','Carnival'],
+          ['/logos/gap.svg','https://www.gap.com/','The GAP'],
+          ['/logos/gire.svg','https://www.gire.com/','GIRE'],
+          ['/logos/american-airlines.svg','https://www.aa.com/','American Airlines'],
+          ['/logos/intcomex.svg','https://www.intcomex.com/','Intcomex']
+        ] as $logo)
+          <div class="item">
+            <div class="clients-item">
+              <a target="_blank" href="{{url($logo[1])}}" alt="{{empty($logo[2])?'':$logo[2]}}">
+                <img src="{{url($logo[0])}}" alt="" />
+              </a>
+            </div>
           </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/bairesdev.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/omnimed.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/dealerrater.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/cafeto.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/globant.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/carnival.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/gap.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/gire.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/american-airlines.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="clients-item">
-            <a target="_blank" href="#">
-              <img src="{{ url('/logos/intcomex.svg')}}" alt="" />
-            </a>
-          </div>
-        </div>
+        @endforeach
         
       </div>
 
