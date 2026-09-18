@@ -460,11 +460,15 @@
 		},
 		success: 'valid',
 		submitHandler: function() {
+      let csrf = $("#cform").find('input[name="_token"]').val();
 			$.ajax({
-				url: '/api/cv/contact',
+				url: '/cv/contact',
 				type: 'post',
 				dataType: 'json',
-				data: 'name='+ $("#cform").find('input[name="name"]').val() + '&email='+ $("#cform").find('input[name="email"]').val() + '&message=' + $("#cform").find('textarea[name="message"]').val(),
+        headers: { 'X-CSRF-TOKEN': csrf },
+				data: 'name='+ $("#cform").find('input[name="name"]').val()
+          + '&email='+ $("#cform").find('input[name="email"]').val()
+          + '&message=' + $("#cform").find('textarea[name="message"]').val(),
 				beforeSend: function() {
 				
 				},

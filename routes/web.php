@@ -10,3 +10,4 @@ Route::get('/', function () {
 Route::get('/cv', [CvController::class, 'view'])->name('cv');
 Route::get('/cv/es', [CvController::class, 'viewEs'])->name('cvEs');
 Route::get('/cv/en', [CvController::class, 'viewEn'])->name('cvEn');
+Route::post('/cv/contact', [CvController::class, 'contact'])->name('web-contact');
