@@ -10,8 +10,7 @@ return [
     'contact' => 'Contact',
     'download_cv' => 'PDF',
   ],
-  'contact_me' => 'Contact Me',
-  
+
   'about' => [
     'title' => 'About Me',
     'my_story' => 'My story',
@@ -38,5 +37,13 @@ return [
   'portfolio' => [
     'label' => 'Portfolio',
     'latest_works' => 'Latest works',
-  ]
+  ],
+
+  'full_name' => 'Full name',
+  'email_address' => 'Email Address',
+  'message' => 'Message',
+  'contact_me' => 'Contáctame',
+  'lets_talk' => 'Let\'s talk',
+  'send_message' => 'Send',
+  'message_sent' => 'Thanks, your message has been sent successfully.',
 ];

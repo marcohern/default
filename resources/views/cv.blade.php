@@ -79,7 +79,7 @@
 
       <x-cv.section-clients/>
       
-      <x-cv.section-portfolio/>
+      <!--x-cv.section-portfolio/-->
 
       <x-cv.section-contact-me :profile="$profile"/>
 

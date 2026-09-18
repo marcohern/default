@@ -5,8 +5,8 @@
 
     <!-- title -->
     <div class="titles">
-      <div class="title">Contact</div>
-      <div class="subtitle">Let's talk</div>
+      <div class="title">{{__('cv.contact_me')}}</div>
+      <div class="subtitle">{{__('cv.lets_talk')}}</div>
     </div>
 
     <!-- contact form -->
@@ -14,26 +14,26 @@
       <form id="cform" method="post" action="/cv/contact">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <div class="group-val">
-          <div class="label">Full name <strong>*</strong></div>
+          <div class="label">{{__('cv.full_name')}} <strong>*</strong></div>
             <input type="text" name="name" placeholder="ej.: Genoveva Lian Hullt" />
         </div>
         <div class="group-val">
-          <div class="label">Email address <strong>*</strong></div>
+          <div class="label">{{__('cv.email_address')}} <strong>*</strong></div>
           <input type="email" name="email" placeholder="example@domain.com" />
         </div>
         <div class="group-val">
-          <div class="label">Message <strong>*</strong></div>
+          <div class="label">{{__('cv.message')}} <strong>*</strong></div>
           <textarea name="message" placeholder="To Write"></textarea>
         </div>
         <div class="group-bts">
           <button type="submit" class="btn">
-            <span class="animated-button"><span>Send Message</span></span>
+            <span class="animated-button"><span>{{__('cv.send_message')}}</span></span>
             <i class="icon fas fa-chevron-right"></i>
           </button>
         </div>
       </form>
       <div class="alert-success">
-        <p>Thanks, your message is sent successfully.</p>
+        <p>{{__('cv.message_sent')}}</p>
       </div>
     </div>
 

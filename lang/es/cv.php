@@ -10,7 +10,6 @@ return [
     'contact' => 'Contáctame',
     'download_cv' => 'PDF (Inglés)',
   ],
-  'contact_me' => 'Contáctame',
 
   'about' => [
     'title' => 'Acerca de mi',
@@ -38,5 +37,13 @@ return [
   'portfolio' => [
     'label' => 'Portafolio',
     'latest_works' => 'Ultimos trabajos',
-  ]
+  ],
+
+  'full_name' => 'Nombre completo',
+  'email_address' => 'Dirección de correo',
+  'message' => 'Mensaje',
+  'contact_me' => 'Contáctame',
+  'lets_talk' => 'Hablemos',
+  'send_message' => 'Enviar',
+  'message_sent' => 'Gracias, tu mensaje ha sido enviado exitosamente.',
 ];
