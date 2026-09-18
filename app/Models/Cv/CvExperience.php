@@ -15,21 +15,22 @@ class CvExperience extends Model
         return $this->belongsTo(CvProfile::class, 'profile_id');
     }
 
-    public function startYear(): Attribute
+    private function dateYear($dateField): Attribute
     {
       return Attribute::make(
-         get: fn (mixed $value, array $attributes) => isset($attributes['start'])
-                ? Carbon::parse($attributes['start'])->year
+         get: fn (mixed $value, array $attributes) => isset($attributes[$dateField])
+                ? Carbon::parse($attributes[$dateField])->year
                 : null,
       );
     }
 
+    public function startYear(): Attribute
+    {
+      return $this->dateYear('start');
+    }
+
     public function endYear(): Attribute
     {
-      return Attribute::make(
-         get: fn (mixed $value, array $attributes) => isset($attributes['end'])
-                ? Carbon::parse($attributes['end'])->year
-                : null,
-      );
+      return $this->dateYear('end');
     }
 }
