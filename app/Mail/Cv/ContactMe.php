@@ -19,9 +19,9 @@ class ContactMe extends Mailable
      * Create a new message instance.
      */
     public function __construct(
-      public string $from,
+      public string $fromEmail,
       public string $fromName,
-      public string $message)
+      public string $content)
     {
         //
     }
@@ -32,9 +32,10 @@ class ContactMe extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address($from, $fromName),
             subject: 'marcohern.com - Contact you',
-
+            replyTo: [
+              new Address($this->fromEmail, $this->fromName)
+            ],
         );
     }
 

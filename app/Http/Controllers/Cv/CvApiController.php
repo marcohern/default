@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Cv;
 
 use App\Daos\Cv\CvProfileDao;
 use App\Http\Controllers\Controller;
+use App\Mail\Cv\ContactMe;
 use App\Models\Cv\CvJobTitle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CvApiController extends Controller
 {
@@ -27,7 +29,10 @@ class CvApiController extends Controller
     }
 
     public function contact(Request $r) {
-      $data = $r->all();
-      return ['status' => 1, 'data' => $data];
+      $name = $r->input('name');
+      $email = $r->input('email');
+      $content = $r->input('message');
+       Mail::to('marcohern@gmail.com')->send(new ContactMe($email, $name, $content));
+      return ['status' => 1];
     }
 }
