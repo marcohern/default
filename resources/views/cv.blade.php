@@ -73,7 +73,7 @@
 
       <x-cv.section-language-skills :languages="$profile->languages"/>
 
-      <x-cv.section-coding-skills/>
+      <x-cv.section-coding-skills :codingSkills="$profile->codingSkills"/>
 
 			<!--x-cv.section-reviews/-->
 

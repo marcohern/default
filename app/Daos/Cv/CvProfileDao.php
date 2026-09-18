@@ -31,6 +31,9 @@ class CvProfileDao
         },
         'languages' => function ($query) {
           $query->orderBy('ord', 'asc');
+        },
+        'codingSkills' => function ($query) {
+          $query->orderBy('ord', 'asc');
         }
       ])->find($profileId);
     }

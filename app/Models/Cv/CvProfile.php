@@ -47,6 +47,11 @@ class CvProfile extends Model
     {
       return $this->hasMany(CvLanguage::class, 'profile_id','id');
     }
+    
+    public function codingSkills(): HasMany
+    {
+      return $this->hasMany(CvCodingSkill::class, 'profile_id','id');
+    }
 
     protected function age(): Attribute
     {
