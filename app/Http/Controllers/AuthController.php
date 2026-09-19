@@ -16,8 +16,10 @@ class AuthController extends Controller
     public function login()
     {
         $credentials = request(['email', 'password']);
-
-        if (! $token = auth()->attempt($credentials)) {
+        $scope = [
+          ['a'=>'a', 'm'=>'*', 'r'=>'*']
+        ];
+        if (! $token = auth()->claims(['scope' => $scope])->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
@@ -31,7 +33,10 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json(auth()->user());
+      $payload = auth()->payload();
+      $scope = $payload['scope'];
+      $user = auth()->user();
+      return response()->json(['user'=>$user, 'scope'=>$scope]);
     }
 
     /**
