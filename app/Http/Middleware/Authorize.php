@@ -24,16 +24,21 @@ class Authorize
         $method = $request->method();
         $uri = $request->getRequestUri();
         foreach ($scope as $item) {
-          $scopeMethod = $item['m'];
-          $uriMethod = $item['r'];
-          $methodMatches = Str::match("/$scopeMethod/",$method);
-          $uriMatches = Str::match("/$uriMethod/",$uri);
-          //dd(['scope'=>$item,'method'=>$method,'uri'=>$uri,'methodMatches'=>$methodMatches,'uriMatches'=>$uriMatches]);
-          if ($methodMatches && $uriMatches) {
-            if ($item['a'] === 'a') return $next($request);
-          }
+          if ($this->isAllowed($method, $uri, $item)) return $next($request);
         }
       }
       throw new AuthorizationException('Access denied.');
+    }
+
+    protected function isAllowed(string $method,string $uri,array $item): bool
+    {
+      $scopeMethod = $item['m'];
+      $uriMethod = $item['r'];
+      $methodMatches = Str::match("/$scopeMethod/",$method);
+      $uriMatches = Str::match("/$uriMethod/",$uri);
+      if ($methodMatches && $uriMatches) {
+        if ($item['a'] === 'a') return true;
+      }
+      return false;
     }
 }
