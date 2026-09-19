@@ -17,7 +17,7 @@ class AuthController extends Controller
     {
         $credentials = request(['email', 'password']);
         $scope = [
-          ['a'=>'a', 'm'=>'*', 'r'=>'*']
+          ['a'=>'a', 'm'=>'.*', 'r'=>'^\/api\/auth']
         ];
         if (! $token = auth()->claims(['scope' => $scope])->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
