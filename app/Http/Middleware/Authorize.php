@@ -30,14 +30,41 @@ class Authorize
       throw new AuthorizationException('Access denied.');
     }
 
-    protected function isAllowed(string $method,string $uri,array $item): bool
+    protected function findMatch(string $method,string $uri, array $policies): array|null
     {
-      $scopeMethod = $item['m'];
-      $uriMethod = $item['r'];
-      $methodMatches = Str::match("/$scopeMethod/",$method);
-      $uriMatches = Str::match("/$uriMethod/",$uri);
-      if ($methodMatches && $uriMatches) {
-        if ($item['a'] === 'a') return true;
+      foreach ($policies as $policy)
+      {
+        $scopeMethod = $policy['m'];
+        $uriMethod = $policy['r'];
+        $methodMatches = Str::match("/$scopeMethod/",$method);
+        $uriMatches = Str::match("/$uriMethod/",$uri);
+        if ($methodMatches && $uriMatches) return $policies;
+      }
+      return null;
+    }
+
+    protected function findDeepMatch(string $method,string $uri,array $policies): array|null
+    {
+      $policy = $this->findMatch($method, $uri, $policies);
+      if (!is_null($policy))
+      {
+        if (array_key_exists('c', $policy))
+        {
+          $childPolicy = $this->findDeepMatch($method, $uri, $policy['c']);
+          if ($childPolicy) return $childPolicy;
+        }
+        return $policy;
+      }
+      return null;
+    }
+
+    protected function isAllowed(string $method,string $uri, $policies): bool
+    {
+      if (!is_array($policies)) return null;
+      $policy = $this->findDeepMatch($method, $uri, $policies);
+      if (!is_null($policy)) {
+        if ($policy['a']=='a') return true;
+        if ($policy['a']=='d') return false;
       }
       return false;
     }
