@@ -21,11 +21,11 @@ class AutorizeStringParser
     return Str::isMatch(self::REGEX, $policy);
   }
 
-  public function extractPolicy(string $policy): AuthorizePolicy | null
+  public function extract(string $policy): array | null
   {
     $groups = null;
     $itMatches = preg_match(self::REGEX, $policy, $groups);
-    if ($itMatches) return new AuthorizePolicy($groups[1],$groups[2],$groups[6]);
+    if ($itMatches) return [$groups[1],$groups[2],$groups[6]];
     return null;
   }
 }
