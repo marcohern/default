@@ -4,12 +4,11 @@ namespace App\Auth;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class AutorizeStringParser
 {
   private const REGEX = '/^(allow|deny) (\*|((GET|POST|PUT|PATCH|DELETE),)*(GET|POST|PUT|PATCH|DELETE)) (.+)$/';
-  public const FAIL_POLICY_INVALID = 1;
-  public const FAIL_PATH_INVALID = 2;
 
   /**
    * Create a new class instance.
@@ -24,7 +23,7 @@ class AutorizeStringParser
     return Str::isMatch(self::REGEX, $policy);
   }
 
-  public function extract(string $policy): array | int
+  public function extract(string $policy): array
   {
     $results = null;
     $itMatches = preg_match(self::REGEX, $policy, $groups);
@@ -34,11 +33,11 @@ class AutorizeStringParser
       set_error_handler(static fn() => true);
       $isInvalid = (@preg_match($pathex, 'x') === false);
       restore_error_handler();
-      if ($isInvalid) return [self::FAIL_PATH_INVALID,preg_last_error(),null];
+      if ($isInvalid) throw new BadRequestHttpException('Path in policy invalid. ['.preg_last_error().'] '.preg_last_error_msg());
       return [$groups[1],$groups[2],$pathex];
       
       return $results;
     }
-    return [self::FAIL_POLICY_INVALID,null,null];
+    throw new BadRequestHttpException('Policy invalid.');
   }
 }

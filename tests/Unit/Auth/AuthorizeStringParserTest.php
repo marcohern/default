@@ -1,6 +1,7 @@
 <?php
 
 use App\Auth\AutorizeStringParser;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 beforeEach(function () {
     $this->parser = new AutorizeStringParser;
@@ -36,25 +37,37 @@ test('[AutorizeStringParser::extract] can extract components from valid authoriz
     expect($pathex)->toBe($components[2]);
 })->with([
   ['policy' => 'allow * /.*/', 'components' => ['allow','*','/.*/']], //allow everything,
+  ['policy' => 'allow * /\//', 'components' => ['allow','*','/\//']], //allow all methods in home,
   ['policy' => 'allow * /abc/', 'components' => ['allow','*','/abc/']],
   ['policy' => 'allow GET,PUT,PATCH,POST,DELETE /.*/', 'components' => ['allow','GET,PUT,PATCH,POST,DELETE','/.*/']], //allow everything explicitely
   ['policy' => 'deny * /\/admin(\/.*)?/', 'components' => ['deny','*','/\/admin(\/.*)?/']], //deny /admin or /admin/*
-  ['policy' => 'allow * /\/entity(\/.*)?/', 'components' => ['allow','*','/\/entity(\/.*)?/']], //allow /entity or /entity/*
-  ['policy' => 'deny POST /\/entity(\/.*)?/', 'components' => ['deny','POST','/\/entity(\/.*)?/']], //deny POST /entity or /entity/*
+  ['policy' => 'allow * /\/users(\/.*)?/', 'components' => ['allow','*','/\/users(\/.*)?/']], //allow /users or /users/*
+  ['policy' => 'deny POST /\/orders(\/.*)?/', 'components' => ['deny','POST','/\/orders(\/.*)?/']], //deny POST /orders or /orders/*
   ]);
 
-test('[AutorizeStringParser::extract] cannot extract components from invalid authorization string', function (string $policy, int $failWith) {
+it('[AutorizeStringParser::extract] cannot extract components from invalid authorization string', function (string $policy) {
     
     //Test
     list($action,$methods,$pathex) = $this->parser->extract($policy);
 
-    //Assert
-    expect($action)->toBe($failWith);
-})->with([
-  ['policy' => 'allow GET,POST,PULL /.*/', 'failWith' => AutorizeStringParser::FAIL_POLICY_INVALID],
-  ['policy' => 'allow + /.*/', 'failWith' => AutorizeStringParser::FAIL_POLICY_INVALID],
-  ['policy' => 'accept * /abc/', 'failWith' => AutorizeStringParser::FAIL_POLICY_INVALID],
-  ['policy' => 'reject POST /edf/', 'failWith' => AutorizeStringParser::FAIL_POLICY_INVALID],
-  ['policy' => 'allow * /', 'failWith' => AutorizeStringParser::FAIL_PATH_INVALID],
-  ['policy' => 'allow GET abc', 'failWith' => AutorizeStringParser::FAIL_PATH_INVALID],
-]);;
+})->throws(BadRequestHttpException::class,'Policy invalid.')->with([
+  ['policy' => 'allow GET,POST,PULL /.*/'], //PULL is not a valid method
+  ['policy' => 'allow *,GET /.*/'], //methods *,GET is invalid
+  ['policy' => 'allow + /.*/'], //+ instead of * is rejected
+  ['policy' => 'accept * /abc/'], //accept is not a valid action
+  ['policy' => 'reject POST /edf/'], //reject is not a valid action
+  ['policy' => 'allow PUST /ghj/'],//PUST is not a valid method
+  
+]);
+
+it('[AutorizeStringParser::extract] cannot extract components from authorization string that have an invalid regex as path', function (string $policy) {
+    
+    //Test
+    list($action,$methods,$pathex) = $this->parser->extract($policy);
+
+})->throws(BadRequestHttpException::class,'Path in policy invalid.')->with([
+  ['policy' => 'allow * /'], // '/' is not a valid regex
+  ['policy' => 'allow GET abc'], // missing '/':'/abc/'
+  ['policy' => 'allow GET /(/'], // open parenthesis but not closing
+  ['policy' => 'allow GET /[/'], // open square brackets but not closing
+]);
