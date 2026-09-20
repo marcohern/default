@@ -12,38 +12,49 @@ afterEach(function ()
   
 });
 
-test('[AutorizeStringParser::isValid] can validate authorization string', function () {
+test('[AutorizeStringParser::isValid] can validate propper authorization string', function (string $policy) {
     //Test
-    $isValid1 = $this->parser->isValid('allow * \/api\/.*');
-    $isValid2 = $this->parser->isValid('deny PATCH \/api\/admin(\/.*)?');
-    $isValid3 = $this->parser->isValid('accept PULLUP \/whatever');
-    $isValid4 = $this->parser->isValid('reject SIMMER someother');
+    $isValid = $this->parser->isValid($policy);
     
     //Assert
-    expect($isValid1)->toBeTrue();
-    expect($isValid2)->toBeTrue();
-    expect($isValid3)->toBeFalse();
-    expect($isValid4)->toBeFalse();
-});
+    expect($isValid)->toBeTrue();
+})->with([
+  ['policy' => 'allow * /.*/'], //allow everything,
+  ['policy' => 'allow GET,PUT,PATCH,POST,DELETE /.*/'], //allow everything explicitely
+  ['policy' => 'deny * /\/admin(\/.*)?/'], //deny /admin or /admin/*
+  ['policy' => 'allow * /\/entity(\/.*)?/'], //allow /entity or /entity/*
+  ['policy' => 'deny POST /\/entity(\/.*)?/'], //deny POST /entity or /entity/*
+]);
 
-test('[AutorizeStringParser::extract] can extract components from valid authorization string', function () {
+test('[AutorizeStringParser::extract] can extract components from valid authorization string', function (string $policy, array $components) {
     //Test
-    list($action1,$methods1,$pathex1) = $this->parser->extract('allow * \/api\/.*');
-    list($action2,$methods2,$pathex2) = $this->parser->extract('deny DELETE \/api\/users\/.*');
+    list($action,$methods,$pathex) = $this->parser->extract($policy);
 
     //Assert
-    expect($action1)->toBe('allow');
-    expect($methods1)->toBe('*');
-    expect($pathex1)->toBe('\/api\/.*');
-    expect($action2)->toBe('deny');
-    expect($methods2)->toBe('DELETE');
-    expect($pathex2)->toBe('\/api\/users\/.*');
-});
+    expect($action)->toBe($components[0]);
+    expect($methods)->toBe($components[1]);
+    expect($pathex)->toBe($components[2]);
+})->with([
+  ['policy' => 'allow * /.*/', 'components' => ['allow','*','/.*/']], //allow everything,
+  ['policy' => 'allow * /abc/', 'components' => ['allow','*','/abc/']],
+  ['policy' => 'allow GET,PUT,PATCH,POST,DELETE /.*/', 'components' => ['allow','GET,PUT,PATCH,POST,DELETE','/.*/']], //allow everything explicitely
+  ['policy' => 'deny * /\/admin(\/.*)?/', 'components' => ['deny','*','/\/admin(\/.*)?/']], //deny /admin or /admin/*
+  ['policy' => 'allow * /\/entity(\/.*)?/', 'components' => ['allow','*','/\/entity(\/.*)?/']], //allow /entity or /entity/*
+  ['policy' => 'deny POST /\/entity(\/.*)?/', 'components' => ['deny','POST','/\/entity(\/.*)?/']], //deny POST /entity or /entity/*
+  ]);
 
-test('[AutorizeStringParser::extract] cannot extract components from invalid authorization string', function () {
+test('[AutorizeStringParser::extract] cannot extract components from invalid authorization string', function (string $policy, int $failWith) {
+    
     //Test
-    $result = $this->parser->extract('allow GET,POST,PULL \/api\/.*');
+    list($action,$methods,$pathex) = $this->parser->extract($policy);
 
     //Assert
-    expect($result)->toBe(null);
-});
+    expect($action)->toBe($failWith);
+})->with([
+  ['policy' => 'allow GET,POST,PULL /.*/', 'failWith' => AutorizeStringParser::FAIL_POLICY_INVALID],
+  ['policy' => 'allow + /.*/', 'failWith' => AutorizeStringParser::FAIL_POLICY_INVALID],
+  ['policy' => 'accept * /abc/', 'failWith' => AutorizeStringParser::FAIL_POLICY_INVALID],
+  ['policy' => 'reject POST /edf/', 'failWith' => AutorizeStringParser::FAIL_POLICY_INVALID],
+  ['policy' => 'allow * /', 'failWith' => AutorizeStringParser::FAIL_PATH_INVALID],
+  ['policy' => 'allow GET abc', 'failWith' => AutorizeStringParser::FAIL_PATH_INVALID],
+]);;

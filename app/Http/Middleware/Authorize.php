@@ -17,15 +17,13 @@ class Authorize
     public function handle(Request $request, Closure $next): Response
     {
       $payload = auth()->payload();
-      $scope = $payload['scope'];
+      $policies = $payload['scope'];
       $methodMatches = false;
       $uriMatches = false;
-      if ($scope) {
+      if ($policies) {
         $method = $request->method();
         $uri = $request->getRequestUri();
-        foreach ($scope as $item) {
-          if ($this->isAllowed($method, $uri, $item)) return $next($request);
-        }
+        if ($this->isAllowed($method, $uri, $policies)) return $next($request);
       }
       throw new AuthorizationException('Access denied.');
     }
