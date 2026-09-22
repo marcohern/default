@@ -29,6 +29,7 @@ class JwtaCreateRole extends Command
       if ($disk->exists($filepath) && !$override)
       {
         $this->error('role allready exists: '.$filepath);
+        return;
       }
       
       $disk->put($filepath, json_encode($policies));
