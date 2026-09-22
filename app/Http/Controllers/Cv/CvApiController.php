@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cv;
 
+use App\Models\Cv\CvProfile;
 use App\Daos\Cv\CvProfileDao;
 use App\Http\Controllers\Controller;
 use App\Mail\Cv\ContactMe;

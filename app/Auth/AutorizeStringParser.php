@@ -8,7 +8,8 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class AutorizeStringParser
 {
-  private const REGEX = '/^(allow|deny) (\*|((GET|POST|PUT|PATCH|DELETE),)*(GET|POST|PUT|PATCH|DELETE)) (.+)$/';
+  private const METHODS = 'GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS|CONNECT|TRACE';
+  private const REGEX = '/^(allow|deny) (\*|(('.self::METHODS.'),)*('.self::METHODS.')) (.+)$/';
 
   /**
    * Create a new class instance.
@@ -39,5 +40,9 @@ class AutorizeStringParser
       return $results;
     }
     throw new BadRequestHttpException('Policy invalid.');
+  }
+
+  public function check(string $policy, string $method, string $url) {
+    
   }
 }
