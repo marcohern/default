@@ -8,7 +8,7 @@ use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 
 #[Signature('jwta:test {policy} {method=GET} {route?}')]
-#[Description('Command description')]
+#[Description('Specify a policy, test if it is valid, and test it against a request method and path.')]
 class JwtaTest extends Command
 {
     /**

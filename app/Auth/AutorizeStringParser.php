@@ -61,7 +61,6 @@ class AutorizeStringParser
         if ($matches[0]==$method) $methodMatch = true;
       }
     }
-    
 
     $pathMatchEval = preg_match($pathex, $uri);
     if ($pathMatchEval === 1) $pathsMatch = true;
