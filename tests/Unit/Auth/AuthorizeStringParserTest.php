@@ -37,6 +37,7 @@ test('[AutorizeStringParser::extract] can extract components from valid authoriz
     expect($pathex)->toBe($components[2]);
 })->with([
   ['policy' => 'allow * /.*/', 'components' => ['allow','*','/.*/']], //allow everything,
+  ['policy' => 'allow * //', 'components' => ['allow','*','//']], //allow empty,
   ['policy' => 'allow * /\//', 'components' => ['allow','*','/\//']], //allow all methods in home,
   ['policy' => 'allow * /abc/', 'components' => ['allow','*','/abc/']],
   ['policy' => 'allow GET,PUT,PATCH,POST,DELETE /.*/', 'components' => ['allow','GET,PUT,PATCH,POST,DELETE','/.*/']], //allow everything explicitely
@@ -51,7 +52,11 @@ it('[AutorizeStringParser::extract] cannot extract components from invalid autho
     list($action,$methods,$pathex) = $this->parser->extract($policy);
 
 })->throws(BadRequestHttpException::class,'Policy invalid.')->with([
-  ['policy' => 'allow GET,POST,PULL /.*/'], //PULL is not a valid method
+  
+  ['policy' => 'allow *'],
+  ['policy' => 'allow * '],
+  ['policy' => 'allow *      '],
+    ['policy' => 'allow GET,POST,PULL /.*/'], //PULL is not a valid method
   ['policy' => 'allow *,GET /.*/'], //methods *,GET is invalid
   ['policy' => 'allow + /.*/'], //+ instead of * is rejected
   ['policy' => 'accept * /abc/'], //accept is not a valid action
@@ -67,7 +72,11 @@ it('[AutorizeStringParser::extract] cannot extract components from authorization
 
 })->throws(BadRequestHttpException::class,'Path in policy invalid.')->with([
   ['policy' => 'allow * /'], // '/' is not a valid regex
+  ['policy' => 'allow * /a'], // '/a' is not a valid regex
   ['policy' => 'allow GET abc'], // missing '/':'/abc/'
   ['policy' => 'allow GET /(/'], // open parenthesis but not closing
   ['policy' => 'allow GET /[/'], // open square brackets but not closing
+  ['policy' => 'allow GET /?/'], // '?' is a reserved char
+  ['policy' => 'allow GET /*/'], // '*' is a reserved char
+  ['policy' => 'allow GET /+/'], // '+' is a reserved char
 ]);

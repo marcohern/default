@@ -8,8 +8,9 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class AutorizeStringParser
 {
+  private const ACTIONS = 'allow|deny';
   private const METHODS = 'GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS|CONNECT|TRACE';
-  private const REGEX = '/^(allow|deny) (\*|(('.self::METHODS.'),)*('.self::METHODS.')) (.+)$/';
+  private const REGEX = '/^('.self::ACTIONS.') (\*|(('.self::METHODS.'),)*('.self::METHODS.')) ([^\s]+)$/';
 
   /**
    * Create a new class instance.
