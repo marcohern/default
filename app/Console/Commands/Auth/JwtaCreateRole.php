@@ -8,7 +8,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
-#[Signature('jwta:create-role {role-name} {--allow-all-by-default}')]
+#[Signature('jwta:create-role {role-name} {--allow-all-by-default} {--override-if-exists}')]
 #[Description('Create a new role.')]
 class JwtaCreateRole extends Command
 {
@@ -20,15 +20,18 @@ class JwtaCreateRole extends Command
       $roleName = $this->argument('role-name');
       $filepath = "auth/roles/$roleName.json";
       $policies = ['deny * /.*/'];
+      $override = $this->option('override-if-exists');
       if ($this->option('allow-all-by-default')) {
         $policies[0] = 'allow * /.*/';
       }
+
       $disk = Storage::disk('local');
-      if ($disk->exists($filepath))
+      if ($disk->exists($filepath) && !$override)
       {
         $this->error('role allready exists: '.$filepath);
       }
       
       $disk->put($filepath, json_encode($policies));
+      $this->info("file '$roleName' created with '{$policies[0]}'.");
     }
 }
