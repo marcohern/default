@@ -43,7 +43,18 @@ class AutorizeStringParser
     throw new BadRequestHttpException('Policy invalid.');
   }
 
-  public function check(string $policy, string $method, string $url) {
+  public function isMatch(array $policy, string $method, string $uri): bool
+  {
+    $actions = $policy[0];
+    $methods = $policy[1];
+    $pathex  = $policy[2];
+    $pathsMatch = false;
+    $pathMatchEval = preg_match($pathex, $uri);
     
+    if ($pathMatchEval === 1) $pathsMatch = true;
+    else $pathsMatch = false;
+
+    if ($pathsMatch) return true;
+    return false;
   }
 }
