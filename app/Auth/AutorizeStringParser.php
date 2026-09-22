@@ -10,7 +10,8 @@ class AutorizeStringParser
 {
   private const ACTIONS = 'allow|deny';
   private const METHODS = 'GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS|CONNECT|TRACE';
-  private const REGEX = '/^('.self::ACTIONS.') (\*|(('.self::METHODS.'),)*('.self::METHODS.')) ([^\s]+)$/';
+  private const METHOD_LIST = '(('.self::METHODS.'),)*('.self::METHODS.')';
+  private const REGEX = '/^('.self::ACTIONS.') (\*|'.self::METHOD_LIST.') ([^\s]+)$/';
 
   /**
    * Create a new class instance.
@@ -48,13 +49,24 @@ class AutorizeStringParser
     $actions = $policy[0];
     $methods = $policy[1];
     $pathex  = $policy[2];
+    $methodMatch = false;
     $pathsMatch = false;
-    $pathMatchEval = preg_match($pathex, $uri);
     
-    if ($pathMatchEval === 1) $pathsMatch = true;
-    else $pathsMatch = false;
+    if ($methods == '*') $methodMatch = true;
+    else
+    {
+      $methodMatchEval = preg_match("/$method/", $methods, $matches);
+      if ($methodMatchEval === 1)
+      {
+        if ($matches[0]==$method) $methodMatch = true;
+      }
+    }
+    
 
-    if ($pathsMatch) return true;
+    $pathMatchEval = preg_match($pathex, $uri);
+    if ($pathMatchEval === 1) $pathsMatch = true;
+
+    if ($pathsMatch && $methodMatch) return true;
     return false;
   }
 }

@@ -22,20 +22,24 @@ class JwtaTest extends Command
 
         if ($parser->isValid($policy)) {
           try {
-            $result = $parser->extract($policy);
-            list($action, $method, $pathex) = $result;
+            list($action, $method, $pathex) = $parser->extract($policy);
             $this->info("policy is valid! [{$action}] [{$method}] [{$pathex}]");
 
             $inMethod = $this->argument('method');
             $inRoute = $this->argument('route');
+            if (is_null($inRoute)) return;
 
-            $itMatches = $parser->isMatch($result, $inMethod, $inRoute);
+            $itMatches = $parser->isMatch([$action, $method, $pathex], $inMethod, $inRoute);
             if ($itMatches) {
               $this->info("policy '$policy' matches [$inMethod] [$inRoute]");
               if ($action == 'allow') $this->info('You DO have permission to access this resource.');
               else $this->info('You DO NOT have permission to access this resource.');
             }
-            else $this->info("policy '$policy' does not match [$inMethod] [$inRoute]");
+            else
+              {
+              $this->info("policy '$policy' does not match [$inMethod] [$inRoute]");
+              $this->info("You DO NOT have permissions to access this resource");
+            }
           } catch (\Exception $ex) {
             $this->error($ex->getMessage());
           }
