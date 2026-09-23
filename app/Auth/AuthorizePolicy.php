@@ -34,11 +34,11 @@ class AuthorizePolicy
 
   public static function from($policy, array $children=[]): self
   {
-    if (is_string($policy)) return self::fromString($policy);
-    if (is_array($policy)) return self::fromArray($policy);
+    if (is_string($policy)) return self::fromString($policy,$children);
+    if (is_array($policy)) return self::fromArray($policy,$children);
     if ($policy instanceof stdClass) return self::fromStdClass($policy);
     if ($policy instanceof self) return new self($policy->action, $policy->methods, $policy->pathex, $children);
-    throw new BadRequestHttpException('unable to cast ['.typeof($policy).'] to type ['.self::class.']');
+    throw new BadRequestHttpException('unable to cast ['.get_class($policy).'] to type ['.self::class.']');
   }
 
   public function __construct(string $action, string $methods, string $pathex, array $children=[])
@@ -46,10 +46,15 @@ class AuthorizePolicy
     $this->action = $action;
     $this->methods = $methods;
     $this->pathex = $pathex;
-    $this->children = [];
-    foreach ($children as $child)
+    $inChildren = [];
+    foreach ($children as $key => $child)
     {
-      $this->children[] = self::from($child);
+      $innerChildren = null;
+      if (is_integer($key)) $inChildren[] = self::from($child);
+      else if (is_string($key)) {
+        $inChildren[] = self::from($key, $child);
+      }
     }
+    $this->children = $inChildren;
   }
 }
