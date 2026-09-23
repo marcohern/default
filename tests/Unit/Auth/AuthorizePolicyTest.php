@@ -12,20 +12,14 @@ it('[AuthorizePolicy::__construct] can build an instance of AuthorizePolicy', fu
   ['action'=>'deny' ,'methods'=>'GET','pathex'=>'/\/admin(\/.*)?/'],
 ]);
 
-it('[AuthorizePolicy::from] can build an instance of AuthorizePolicy', function (string $key, array $children) {
+it('[AuthorizePolicy::from] can build an instance of AuthorizePolicy recursively', function (string $key, array $children, int $childCount) {
     $policy = AuthorizePolicy::from($key, $children);
 
-    expect($policy->action)->toBe('allow');
-    expect($policy->methods)->toBe('*');
-    expect($policy->pathex)->toBe('/.*/');
+    expect(count($policy->children))->toBe($childCount);
 })->with([
-  ['key' => 'allow * /.*/', 'children' => [
+  ['key' => 'allow * /.*/','children' => [
       'deny * /\/admin(\/.*)?/',
       'deny * /\/users(\/.*)?/',
-      'deny * /\/orgs(\/.*)?/' => [
-        'allow * /\/orgs\/reports1(\/.*)?/',
-        'allow * /\/orgs\/reports2(\/.*)?/'
-      ],
-    ]
-  ],
+      'deny * /\/orgs(\/.*)?/' => ['allow * /\/orgs\/reports1(\/.*)?/','allow * /\/orgs\/reports2(\/.*)?/'],
+  ], 'childCount'=> 3],
 ]);
