@@ -41,20 +41,23 @@ class AuthorizePolicy
     throw new BadRequestHttpException('unable to cast ['.get_class($policy).'] to type ['.self::class.']');
   }
 
+  public static function fromList(array $policies): array
+  {
+    $list = [];
+    foreach ($policies as $key => $value) {
+      if (is_integer($key)) $list[] = self::from($value);
+      else if (is_string($key)) {
+        $list[] = self::from($key, $value);
+      }
+    }
+    return $list;
+  }
+
   public function __construct(string $action, string $methods, string $pathex, array $children=[])
   {
     $this->action = $action;
     $this->methods = $methods;
     $this->pathex = $pathex;
-    $inChildren = [];
-    foreach ($children as $key => $child)
-    {
-      $innerChildren = null;
-      if (is_integer($key)) $inChildren[] = self::from($child);
-      else if (is_string($key)) {
-        $inChildren[] = self::from($key, $child);
-      }
-    }
-    $this->children = $inChildren;
+    $this->children = self::fromList($children);
   }
 }
