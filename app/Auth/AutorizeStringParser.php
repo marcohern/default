@@ -44,11 +44,24 @@ class AutorizeStringParser
     throw new BadRequestHttpException('Policy invalid.');
   }
 
-  public function isMatch(array $policy, string $method, string $uri): bool
+  public function isMatch(array|AuthorizePolicy $policy, string $method, string $uri): bool
   {
-    $actions = $policy[0];
-    $methods = $policy[1];
-    $pathex  = $policy[2];
+    $actions = null;
+    $methods = null;
+    $pathex  = null;
+    if (is_a($policy, AuthorizePolicy::class))
+    {
+      $actions = $policy->action;
+      $methods = $policy->methods;
+      $pathex  = $policy->pathex;
+    }
+    else if (is_array($policy))
+    {
+      $actions = $policy[0];
+      $methods = $policy[1];
+      $pathex  = $policy[2];
+    }
+    
     $methodMatch = false;
     $pathsMatch = false;
     
