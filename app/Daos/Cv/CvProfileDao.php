@@ -17,27 +17,13 @@ class CvProfileDao
     public function find($profileId, $locale='en'): CvProfile | null {
       return CvProfile::with([
         'jobTitles',
-        'workExperiences' => function ($query) {
-          $query->orderBy('start', 'desc');
-        },
-        'educationExperiences' => function ($query) {
-          $query->orderBy('start', 'desc');
-        },
-        'articles'=> function($query) use($locale) {
-          $query->where(['locale' => $locale])->orderBy('ord', 'asc');
-        },
-        'services' => function ($query) {
-          $query->orderBy('ord', 'asc');
-        },
-        'languages' => function ($query) {
-          $query->orderBy('ord', 'asc');
-        },
-        'codingSkills' => function ($query) {
-          $query->orderBy('ord', 'asc');
-        },
-        'clients' => function ($query) {
-          $query->orderBy('ord', 'asc');
-        }
+        'workExperiences'      => fn ($query) => $query->orderBy('start', 'desc'),
+        'educationExperiences' => fn ($query) => $query->orderBy('start', 'desc'),
+        'articles'             => fn ($query) => $query->where(['locale' => $locale])->orderBy('ord', 'asc'),
+        'services'             => fn ($query) => $query->orderBy('ord', 'asc'),
+        'languages'            => fn ($query) => $query->orderBy('ord', 'asc'),
+        'codingSkills'         => fn ($query) => $query->orderBy('ord', 'asc'),
+        'clients'              => fn ($query) => $query->orderBy('ord', 'asc')
       ])->find($profileId);
-    }
+  }
 }
