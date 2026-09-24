@@ -36,7 +36,7 @@
 	<!-- Container -->
 	<div class="container">
 	
-		<x-cv.header/>
+		<x-cv.header :profile="$profile"/>
 		
 		<!-- Wrapper -->
 		<div class="wrapper">
