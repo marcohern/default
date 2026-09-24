@@ -77,7 +77,7 @@
 
 			<!--x-cv.section-reviews/-->
 
-      <x-cv.section-clients/>
+      <x-cv.section-clients :clients="$profile->clients"/>
       
       <!--x-cv.section-portfolio/-->
 
