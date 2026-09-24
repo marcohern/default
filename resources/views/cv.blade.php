@@ -36,25 +36,7 @@
 	<!-- Container -->
 	<div class="container">
 	
-		<!-- Header -->
-		<header class="header">
-			<x-cv.logo :profile="$profile"/>
-
-			<!-- menu button -->
-			<a href="#" class="menu-btn"><span></span></a>
-				
-			<!-- download cv button -->
-			<a href="{{url('/attachments/marcohern-cv-en.pdf')}}" class="btn download-cv-btn">
-				<span class="animated-button"><span>{{ __('cv.menu-links.download_cv') }}</span></span>
-				<i class="icon fas fa-download"></i>
-			</a>
-
-			<!-- header sidebar -->
-			<div class="header-sidebar">
-        <x-cv.menu-links/>
-			</div>
-
-		</header>
+		<x-cv.header/>
 		
 		<!-- Wrapper -->
 		<div class="wrapper">
@@ -85,23 +67,7 @@
 
 		</div>
 		
-		<!-- Footer -->
-		<footer class="footer">
-			<div class="socials">
-				<a target="_blank" href="https://www.facebook.com/marcohern">
-					<i class="icon fab fa-facebook-f"></i>
-				</a>
-        <a target="_blank" href="https://www.x.com/marquiniopinio">
-					<i class="icon fab fa-twitter"></i>
-				</a>
-        <a href="{{ url('/cv/en') }}">
-          <span class="lang-icon">EN</span>
-				</a>
-        <a href="{{ url('/cv/es') }}">
-          <span class="lang-icon">ES</span>
-				</a>
-			</div>
-		</footer>
+		<x-cv.footer/>
 		
 	</div>
 
