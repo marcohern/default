@@ -12,7 +12,9 @@ uses(TestCase::class);
 it('[Authorize::class] middleware allows access if the user is subscribed', function () {
     // 1. Arrange: Create a state that satisfies the middleware
     $user = User::factory()->make(['id' => 1]);
-    $token = JWTAuth::fromUser($user);
+    $token = JWTAuth::claims([
+      'scope'=> ['a' => 'allow', 'm'=>'GET', 'r'=>'/.*/']
+    ])->fromUser($user);
 
     // 2. Arrange: Define a test route wrapped in the middleware
     Route::get('/test-subscribed', function () {
