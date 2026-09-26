@@ -1,0 +1,3 @@
+[submodule "packages/marcohern/jwtauthorize"]
+	path = packages/marcohern/jwtauthorize
+	url = https://github.com/marcohern/jwtauthorize.git
