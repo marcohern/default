@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bdc33b3d8119e8a3cf2dd986a0f715b",
+    "content-hash": "1f16bdf2c90db8d158ec40cd92f0b638",
     "packages": [
         {
             "name": "brick/math",
@@ -2175,11 +2175,17 @@
         },
         {
             "name": "marcohern/jwtauthorize",
-            "version": "dev-main",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marcohern/jwtauthorize.git",
+                "reference": "43a15d821ee9fbfac341b83e19f880a5a68b5f87"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/marcohern/jwtauthorize",
-                "reference": "03394e5646c03782583bb02660ae5d33e6e59d02"
+                "type": "zip",
+                "url": "https://api.github.com/repos/marcohern/jwtauthorize/zipball/43a15d821ee9fbfac341b83e19f880a5a68b5f87",
+                "reference": "43a15d821ee9fbfac341b83e19f880a5a68b5f87",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "^12.0||^13.0",
@@ -2202,12 +2208,12 @@
             "type": "library",
             "extra": {
                 "laravel": {
-                    "providers": [
-                        "Marcohern\\Jwtauthorize\\JwtauthorizeServiceProvider"
-                    ],
                     "aliases": {
                         "Jwtauthorize": "Marcohern\\Jwtauthorize\\Facades\\Jwtauthorize"
-                    }
+                    },
+                    "providers": [
+                        "Marcohern\\Jwtauthorize\\JwtauthorizeServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -2215,55 +2221,7 @@
                     "Marcohern\\Jwtauthorize\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Marcohern\\Jwtauthorize\\Tests\\": "tests/",
-                    "Workbench\\App\\": "workbench/app/",
-                    "Workbench\\Database\\Factories\\": "workbench/database/factories/",
-                    "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
-                }
-            },
-            "scripts": {
-                "post-autoload-dump": [
-                    "@clear",
-                    "@prepare"
-                ],
-                "prepare": [
-                    "@php vendor/bin/testbench package:discover --ansi"
-                ],
-                "build": [
-                    "@php vendor/bin/testbench workbench:build --ansi"
-                ],
-                "serve": [
-                    "Composer\\Config::disableProcessTimeout",
-                    "@build",
-                    "@php vendor/bin/testbench serve --ansi"
-                ],
-                "lint": [
-                    "vendor/bin/pint --parallel"
-                ],
-                "lint:check": [
-                    "vendor/bin/pint --parallel --test"
-                ],
-                "analyse": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test:types": [
-                    "vendor/bin/pest --type-coverage --min=100"
-                ],
-                "test:unit": [
-                    "vendor/bin/pest --parallel"
-                ],
-                "test": [
-                    "@analyse",
-                    "@lint:check",
-                    "@test:types",
-                    "@test:unit"
-                ],
-                "clear": [
-                    "@php vendor/bin/testbench package:purge-skeleton --ansi"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2280,10 +2238,17 @@
                 "laravel",
                 "marcohern"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/marcohern/jwtauthorize/issues",
+                "source": "https://github.com/marcohern/jwtauthorize/tree/0.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/marcohern",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-09-28T18:01:45+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2459,16 +2424,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.14.0",
+            "version": "3.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "0023eaa2c9110e47446dd512a263c69c40cd41f2"
+                "reference": "34e9109535165bf1d7ff17a610492372ae73a896"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/0023eaa2c9110e47446dd512a263c69c40cd41f2",
-                "reference": "0023eaa2c9110e47446dd512a263c69c40cd41f2",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/34e9109535165bf1d7ff17a610492372ae73a896",
+                "reference": "34e9109535165bf1d7ff17a610492372ae73a896",
                 "shasum": ""
             },
             "require": {
@@ -2560,7 +2525,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-12T20:45:19+00:00"
+            "time": "2026-09-27T12:07:26+00:00"
         },
         {
             "name": "nette/schema",
@@ -10503,9 +10468,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "marcohern/jwtauthorize": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

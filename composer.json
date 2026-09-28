@@ -13,7 +13,7 @@
         "laravel/framework": "^13.17",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^3.0",
-        "marcohern/jwtauthorize": "@dev",
+        "marcohern/jwtauthorize": "^0.1.1",
         "php-open-source-saver/jwt-auth": "^2.9"
     },
     "require-dev": {
@@ -28,15 +28,6 @@
         "pestphp/pest-plugin-laravel": "^4.1",
         "phpunit/phpunit": "^12.5.12"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "packages/marcohern/jwtauthorize",
-            "options": {
-                "symlink": true
-            }
-        }
-    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",
