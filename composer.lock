@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5acd8b967614e16a314fb6719c1f4f2",
+    "content-hash": "3bdc33b3d8119e8a3cf2dd986a0f715b",
     "packages": [
         {
             "name": "brick/math",
@@ -2172,6 +2172,118 @@
                 }
             ],
             "time": "2026-03-08T20:05:35+00:00"
+        },
+        {
+            "name": "marcohern/jwtauthorize",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/marcohern/jwtauthorize",
+                "reference": "03394e5646c03782583bb02660ae5d33e6e59d02"
+            },
+            "require": {
+                "illuminate/support": "^12.0||^13.0",
+                "php": "^8.3",
+                "php-open-source-saver/jwt-auth": "^2.9"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.9",
+                "laravel/agent-detector": "^2.0",
+                "laravel/chisel": "^0.1",
+                "laravel/pao": "^1.0",
+                "laravel/pint": "^1.29",
+                "laravel/prompts": "^0.3",
+                "orchestra/testbench": "^10.0||^11.0",
+                "pestphp/pest": "^4.6||^5.0",
+                "pestphp/pest-plugin-laravel": "^4.1||^5.0",
+                "pestphp/pest-plugin-type-coverage": "^4.0||^5.0",
+                "phpstan/extension-installer": "^1.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Marcohern\\Jwtauthorize\\JwtauthorizeServiceProvider"
+                    ],
+                    "aliases": {
+                        "Jwtauthorize": "Marcohern\\Jwtauthorize\\Facades\\Jwtauthorize"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Marcohern\\Jwtauthorize\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Marcohern\\Jwtauthorize\\Tests\\": "tests/",
+                    "Workbench\\App\\": "workbench/app/",
+                    "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+                    "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+                }
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "@clear",
+                    "@prepare"
+                ],
+                "prepare": [
+                    "@php vendor/bin/testbench package:discover --ansi"
+                ],
+                "build": [
+                    "@php vendor/bin/testbench workbench:build --ansi"
+                ],
+                "serve": [
+                    "Composer\\Config::disableProcessTimeout",
+                    "@build",
+                    "@php vendor/bin/testbench serve --ansi"
+                ],
+                "lint": [
+                    "vendor/bin/pint --parallel"
+                ],
+                "lint:check": [
+                    "vendor/bin/pint --parallel --test"
+                ],
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test:types": [
+                    "vendor/bin/pest --type-coverage --min=100"
+                ],
+                "test:unit": [
+                    "vendor/bin/pest --parallel"
+                ],
+                "test": [
+                    "@analyse",
+                    "@lint:check",
+                    "@test:types",
+                    "@test:unit"
+                ],
+                "clear": [
+                    "@php vendor/bin/testbench package:purge-skeleton --ansi"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Hernandez",
+                    "email": "marcohern@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://github.com/marcohern/jwtauthorize",
+            "keywords": [
+                "jwtauthorize",
+                "laravel",
+                "marcohern"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "monolog/monolog",
@@ -10391,7 +10503,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "marcohern/jwtauthorize": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
