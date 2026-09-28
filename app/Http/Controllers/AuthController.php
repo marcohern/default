@@ -34,7 +34,7 @@ class AuthController extends Controller
     public function me()
     {
       $payload = auth()->payload();
-      $scope = $payload['scope'];
+      $scope = $payload->get('scope');
       $user = auth()->user();
       return ['user'=>$user, 'scope'=>$scope];
     }
