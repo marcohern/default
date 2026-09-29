@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "479305a70aca9cd2a4b72f7b963aefc1",
+    "content-hash": "553d5bba1797c58ea125599467b58ff2",
     "packages": [
         {
             "name": "brick/math",
@@ -2175,16 +2175,16 @@
         },
         {
             "name": "marcohern/jwtauthorize",
-            "version": "0.2.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcohern/jwtauthorize.git",
-                "reference": "7403a3e23f178e227e447308415faa210e29c097"
+                "reference": "34fc956def551ce15c87bb2beb550ba233249cff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcohern/jwtauthorize/zipball/7403a3e23f178e227e447308415faa210e29c097",
-                "reference": "7403a3e23f178e227e447308415faa210e29c097",
+                "url": "https://api.github.com/repos/marcohern/jwtauthorize/zipball/34fc956def551ce15c87bb2beb550ba233249cff",
+                "reference": "34fc956def551ce15c87bb2beb550ba233249cff",
                 "shasum": ""
             },
             "require": {
@@ -2244,7 +2244,7 @@
             ],
             "support": {
                 "issues": "https://github.com/marcohern/jwtauthorize/issues",
-                "source": "https://github.com/marcohern/jwtauthorize/tree/0.2.0"
+                "source": "https://github.com/marcohern/jwtauthorize/tree/0.3.0"
             },
             "funding": [
                 {
@@ -2252,7 +2252,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-29T00:05:31+00:00"
+            "time": "2026-09-29T02:56:31+00:00"
         },
         {
             "name": "monolog/monolog",
