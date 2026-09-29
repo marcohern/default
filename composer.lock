@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f16bdf2c90db8d158ec40cd92f0b638",
+    "content-hash": "479305a70aca9cd2a4b72f7b963aefc1",
     "packages": [
         {
             "name": "brick/math",
@@ -2175,20 +2175,20 @@
         },
         {
             "name": "marcohern/jwtauthorize",
-            "version": "0.1.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcohern/jwtauthorize.git",
-                "reference": "43a15d821ee9fbfac341b83e19f880a5a68b5f87"
+                "reference": "7403a3e23f178e227e447308415faa210e29c097"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcohern/jwtauthorize/zipball/43a15d821ee9fbfac341b83e19f880a5a68b5f87",
-                "reference": "43a15d821ee9fbfac341b83e19f880a5a68b5f87",
+                "url": "https://api.github.com/repos/marcohern/jwtauthorize/zipball/7403a3e23f178e227e447308415faa210e29c097",
+                "reference": "7403a3e23f178e227e447308415faa210e29c097",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^12.0||^13.0",
+                "laravel/framework": "^12.0||^13.0",
                 "php": "^8.3",
                 "php-open-source-saver/jwt-auth": "^2.9"
             },
@@ -2232,15 +2232,19 @@
                     "role": "Developer"
                 }
             ],
+            "description": "Authorize Laravel requests with allow/deny route policies carried in a JWT claim.",
             "homepage": "https://github.com/marcohern/jwtauthorize",
             "keywords": [
+                "authorization",
+                "jwt",
                 "jwtauthorize",
                 "laravel",
-                "marcohern"
+                "marcohern",
+                "middleware"
             ],
             "support": {
                 "issues": "https://github.com/marcohern/jwtauthorize/issues",
-                "source": "https://github.com/marcohern/jwtauthorize/tree/0.1.1"
+                "source": "https://github.com/marcohern/jwtauthorize/tree/0.2.0"
             },
             "funding": [
                 {
@@ -2248,7 +2252,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-28T18:01:45+00:00"
+            "time": "2026-09-29T00:05:31+00:00"
         },
         {
             "name": "monolog/monolog",

@@ -13,7 +13,7 @@
         "laravel/framework": "^13.17",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^3.0",
-        "marcohern/jwtauthorize": "^0.1.1",
+        "marcohern/jwtauthorize": "^0.2.0",
         "php-open-source-saver/jwt-auth": "^2.9"
     },
     "require-dev": {

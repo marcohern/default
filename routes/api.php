@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\Cv\CvApiController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Cv\CvApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -14,10 +13,9 @@ Route::get('/cv_profiles', [CvApiController::class, 'profiles']);
 Route::get('/cv_profile/{id}', [CvApiController::class, 'profile']);
 Route::get('/cv_job_titles', [CvApiController::class, 'jobTitles']);
 
-
 Route::post('/auth/login', [AuthController::class, 'login']);
-Route::middleware('auth:api')->group(function() {
-  Route::post('/auth/logout', [AuthController::class, 'logout']);
-  Route::post('/auth/refresh', [AuthController::class, 'refresh']);
-  Route::post('/auth/me', [AuthController::class, 'me']);
+Route::middleware(['auth:api', 'jwta'])->group(function () {
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
+    Route::post('/auth/refresh', [AuthController::class, 'refresh']);
+    Route::post('/auth/me', [AuthController::class, 'me']);
 });

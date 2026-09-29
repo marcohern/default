@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class AuthController extends Controller
 {
-
     /**
      * Get a JWT via given credentials.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function login()
     {
         $credentials = request(['email', 'password']);
         $scope = [
-          ['a'=>'a', 'm'=>'.*', 'r'=>'^\/api\/auth']
+            'allow * /\/api\/auth(\/.*)?/',
         ];
         if (! $token = auth()->claims(['scope' => $scope])->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
@@ -29,20 +27,21 @@ class AuthController extends Controller
     /**
      * Get the authenticated User.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function me()
     {
-      $payload = auth()->payload();
-      $scope = $payload->get('scope');
-      $user = auth()->user();
-      return ['user'=>$user, 'scope'=>$scope];
+        $payload = auth()->payload();
+        $scope = $payload->get('scope');
+        $user = auth()->user();
+
+        return ['user' => $user, 'scope' => $scope];
     }
 
     /**
      * Log the user out (Invalidate the token).
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function logout()
     {
@@ -54,7 +53,7 @@ class AuthController extends Controller
     /**
      * Refresh a token.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function refresh()
     {
@@ -64,16 +63,15 @@ class AuthController extends Controller
     /**
      * Get the token array structure.
      *
-     * @param  string $token
-     *
-     * @return \Illuminate\Http\JsonResponse
+     * @param  string  $token
+     * @return JsonResponse
      */
     protected function respondWithToken($token)
     {
         return [
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 60,
         ];
     }
 }
