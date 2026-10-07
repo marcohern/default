@@ -3,75 +3,73 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
+use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
-    /**
-     * Get a JWT via given credentials.
-     *
-     * @return JsonResponse
-     */
-    public function login()
-    {
-        $credentials = request(['email', 'password']);
-        $scope = [
-            'allow * /\/api\/auth(\/.*)?/',
-        ];
-        if (! $token = auth()->claims(['scope' => $scope])->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
-        }
-
-        return $this->respondWithToken($token);
+  /**
+   * Get a JWT via given credentials.
+   *
+   * @return JsonResponse
+   */
+  public function login()
+  {
+    $credentials = request(['email', 'password']);
+    if (! $token = JWTAuth::attempt($credentials)) {
+      return response()->json(['error' => 'Unauthorized'], 401);
     }
 
-    /**
-     * Get the authenticated User.
-     *
-     * @return JsonResponse
-     */
-    public function me()
-    {
-        $payload = auth()->payload();
-        $scope = $payload->get('scope');
-        $user = auth()->user();
+    return $this->respondWithToken($token);
+  }
 
-        return ['user' => $user, 'scope' => $scope];
-    }
+  /**
+   * Get the authenticated User.
+   *
+   * @return JsonResponse
+   */
+  public function me()
+  {
+    $payload = JWTAuth::payload();
+    $scope = $payload->get('scope');
+    $user = JWTAuth::user();
 
-    /**
-     * Log the user out (Invalidate the token).
-     *
-     * @return JsonResponse
-     */
-    public function logout()
-    {
-        auth()->logout();
+    return ['user' => $user, 'scope' => $scope];
+  }
 
-        return response()->json(['message' => 'Successfully logged out']);
-    }
+  /**
+   * Log the user out (Invalidate the token).
+   *
+   * @return JsonResponse
+   */
+  public function logout()
+  {
+    JWTAuth::logout();
 
-    /**
-     * Refresh a token.
-     *
-     * @return JsonResponse
-     */
-    public function refresh()
-    {
-        return $this->respondWithToken(auth()->refresh());
-    }
+    return response()->json(['message' => 'Successfully logged out']);
+  }
 
-    /**
-     * Get the token array structure.
-     *
-     * @param  string  $token
-     * @return JsonResponse
-     */
-    protected function respondWithToken($token)
-    {
-        return [
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60,
-        ];
-    }
+  /**
+   * Refresh a token.
+   *
+   * @return JsonResponse
+   */
+  public function refresh()
+  {
+    return $this->respondWithToken(JWTAuth::refresh());
+  }
+
+  /**
+   * Get the token array structure.
+   *
+   * @param  string  $token
+   * @return JsonResponse
+   */
+  protected function respondWithToken($token)
+  {
+    return [
+      'access_token' => $token,
+      'token_type' => 'bearer',
+      'expires_in' => JWTAuth::factory()->getTTL() * 60,
+    ];
+  }
 }
