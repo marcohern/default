@@ -27,7 +27,9 @@
 </head>
 
 <body class="home">
-
+	
+	<div class="php-version">php v{{PHP_VERSION}}</div>
+	
 	<!-- Under Development ribbon — delete this block to remove the banner -->
 	<!--div class="dev-ribbon"><span>{{ __('cv.under_maintenance') }}</span></div-->
 
@@ -40,35 +42,22 @@
 		
 		<!-- Wrapper -->
 		<div class="wrapper">
-      <x-cv.portrait-image/>
+      		<x-cv.portrait-image/>
 			<x-cv.section-start :profile="$profile"/>
-
-      <x-cv.section-about :profile="$profile"/>
-
+      		<x-cv.section-about :profile="$profile"/>
 			<!--x-cv.section-services :services="$profile->services"/-->
-
-      <x-cv.section-experience :experiences="$profile->workExperiences"/>
-
+      		<x-cv.section-experience :experiences="$profile->workExperiences"/>
 			<x-cv.section-education :education="$profile->educationExperiences"/>
-
-      <!--x-cv.section-design-skills/-->
-
-      <x-cv.section-language-skills :languages="$profile->languages"/>
-
-      <x-cv.section-coding-skills :codingSkills="$profile->codingSkills"/>
-
+			<!--x-cv.section-design-skills/-->
+			<x-cv.section-language-skills :languages="$profile->languages"/>
+			<x-cv.section-coding-skills :codingSkills="$profile->codingSkills"/>
 			<!--x-cv.section-reviews/-->
-
-      <x-cv.section-clients :clients="$profile->clients"/>
-      
-      <!--x-cv.section-portfolio/-->
-
-      <x-cv.section-contact-me :profile="$profile"/>
-
+			<x-cv.section-clients :clients="$profile->clients"/>
+			<!--x-cv.section-portfolio/-->
+			<x-cv.section-contact-me :profile="$profile"/>
 		</div>
 		
 		<x-cv.footer/>
-		
 	</div>
 
 	<!-- Scripts -->

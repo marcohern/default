@@ -1,0 +1,7 @@
+.php-version {
+    z-index:10000;
+    position:fixed;
+    right:10px;
+    bottom:5px;
+    color: #575b60;
+}
